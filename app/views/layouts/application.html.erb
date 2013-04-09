@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <link type="text/plain" rel="author" href="http://www.99zcg.com/humans.txt" />
+    <meta name="robots" content="all" />
+    <meta name="author" content="inruby.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "99ZCG" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "久久珍藏馆" %>">
+    <%= stylesheet_link_tag "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <%= csrf_meta_tags %>
+    <%= yield(:head) %>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          $('#slide_banner').cycle({ 
+          fx:      'fade', 
+          speed: 1000,
+          timeout: 5000,
+          delay:   -3000 
+        });
+
+      });
+    </script>
+  </head>
+  <body class="<%= controller_name %> <%= action_name %>">
+    <div class="container-narrow">
+
+    <%= render :partial => "layouts/navigation" %>
+
+
+
+   <%= yield %>
+
+     
+      <hr>
+
+     <%= render :partial => "layouts/footer" %>
+
+    </div> <!-- /container -->
+  </body>
+</html>

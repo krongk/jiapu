@@ -1,0 +1,13 @@
+<div class="well" style="padding: 0px;">
+  <div class="row">
+    <div class="span12">
+    	
+<div id="<%= css %>" class="slider">
+  <% arr.each do |i| %>
+    <%=link_to image_tag(asset_path(i[0]), :width => '940px'), "#{i[1]}" %>
+  <% end %>
+</div>
+    
+    </div>
+  </div>
+</div>

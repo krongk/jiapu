@@ -1,0 +1,21 @@
+---
+zh-CN:
+  simple_form:
+    labels:
+      user:
+        name: '名称'
+        email: '电子邮件'
+        password: '密码'
+        current_password: '当前使用的密码'
+        password_confirmation: '密码确认'
+        remember_me: '记住登录状态'
+    placeholders:
+      user:
+        name: '输入名称'
+        email: '输入电子邮件'
+        password: '输入6..12位密码'
+        password_confirmation: '密码确认'
+        remember_me: '记住登录状态'
+    hint:
+      user:
+        password: 'sdfds'

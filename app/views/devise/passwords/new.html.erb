@@ -1,0 +1,12 @@
+<h2>忘记密码了?</h2>
+
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :email, '请输入注册时用的电子邮件:' %>
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.submit "发电子邮件通知我" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>
