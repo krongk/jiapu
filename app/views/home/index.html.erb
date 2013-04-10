@@ -1,8 +1,10 @@
-<%=render :partial => 'layouts/slider', :locals => {:css => 'slide_banner', :arr => [
-      ["banner1.png", "/"],
-      ["banner2.png", "/"],
-      ["banner3.png", "/home/jiapu"]
-      ]} %>
+
+<div class="row">
+  <div class="span12">
+    <%=image_tag "/assets/banner1.png" %>
+  </div>
+</div>
+
       
 <div class="jumbotron">
   <h1>久久珍藏馆，相传到永远</h1>
@@ -13,37 +15,25 @@
 <div class="container">
   <h3 class="short_headline"><span></span></h3>
   <div class="row-fluid equal featured-columns">
-    <iframe src="jquery-demo1/index.htm" width="100%" height="320px" Frameborder=No Border=0 Marginwidth=0 Marginheight=0 Scrolling=No></iframe>
+<table class="table table-bordered">
+  <tr><td colspan="3">我的珍藏馆</td></tr>
+  <tr>
+    <td><a href="#" class="s_title">家族树</a></td> 
+    <td><a href="#" class="s_title">作品集</a></td> 
+    <td><a href="#" class="s_title">日    记</a></td> 
+  </tr>
+  <tr>
+    <td><a href="#" class="s_title">纪念册</a></td> 
+    <td><a href="#" class="s_title">回忆录</a></td> 
+    <td><a href="#" class="s_title">保险箱</a></td> 
+  </tr>
+</table>
   </div>
 </div>
 
-<br/>
-<div class="container">
-  <h3 class="short_headline"><span>为什么要选择久久珍藏馆</span></h3>
-  <div class="row-fluid equal featured-columns"> 
-    <div class="span4" style="height: 332px;">
-      <a href="#" class="innershadow"><img class="banner-img" src="/assets/title1.png" alt=""></a> 
-      <div class="content">
-            <h3 class="primary-color">这是一个亲情网络</h3>
-            <p>对逝者，有可追溯性；对生者，把生活的片段长久保存，便于回顾.把生活的片段长久保存，便于回顾</p>
-            <p class="text-right last"><a href="#" class="btn custom-btn btn-small btn-very-subtle">更多 →</a></p>
-      </div>
-    </div>
-    <div class="span4" style="height: 332px;">
-      <a href="#" class="innershadow"><img class="banner-img" src="/assets/title2.png" alt=""></a>
-      <div class="content">
-            <h3 class="primary-color">这是一个个人传记</h3>
-            <p>这是一个个人传记We have proven we know that it is better to disintermediate intuitively than to expedite virally. .</p>
-            <p class="text-right last"><a href="#" class="btn custom-btn btn-small btn-very-subtle">更多 →</a></p>
-      </div>
-    </div>
-    <div class="span4" style="height: 332px;">
-      <a href="#" class="innershadow"><img class="banner-img" src="/assets/title3.png" alt=""></a>
-      <div class="content">
-            <h3 class="primary-color">这是一个永久保存的藏馆</h3>
-            <p>技术上，我们同时采用主服务器和备服务器，增加故障预警功能，保证您的信息能够“久久珍藏”.</p>
-            <p class="text-right last"><a href="#" class="btn custom-btn btn-small btn-very-subtle">更多 →</a></p>
-      </div>
-    </div>
+<!-- <div class="container">
+  <h3 class="short_headline"><span></span></h3>
+  <div class="row-fluid equal featured-columns">
+    <iframe src="jquery-demo1/index.htm" width="100%" height="320px" Frameborder=No Border=0 Marginwidth=0 Marginheight=0 Scrolling=No></iframe>
   </div>
-</div>
+</div> -->
