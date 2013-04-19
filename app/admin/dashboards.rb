@@ -1,3 +1,4 @@
+#encoding: utf-8
 ActiveAdmin::Dashboards.build do
 
   # Define your dashboard sections here. Each block will be
@@ -15,6 +16,15 @@ ActiveAdmin::Dashboards.build do
   #     end
   #   end
   
+  section :"快速导航" do
+    ul do
+      li link_to "添加网页", new_admin_page_path
+    end
+  end
+
+  section "后台管理帮助" do 
+    "欢迎使用99ZCG系统后台"
+  end
   # == Render Partial Section
   # The block is rendered within the context of the view, so you can
   # easily render a partial rather than build content in ruby.

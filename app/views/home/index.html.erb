@@ -1,35 +1,54 @@
 
+<div class="jumbotron">
+  <table width="100%"> 
+    <tr><td>
+      <%=image_tag asset_path("banner1-1.png"), :height => "200px" %>
+  </td>
+  <td>
+    <div style="padding-left: 20px;">
+  <p class="lead text-left">如今的网络喧嚣无比，纷繁的信息充斥整个互联网世界，想留住的却稍纵即逝。有这么一个地方，它可以只属于你，它可以保存你所有值得珍藏的信息，并且永世传承下去，这就是久久珍藏馆.</p>
+  </div>
+</tr></table>
+</div>
+<hr/>
+
 <div class="row">
   <div class="span12">
-    <%=image_tag "/assets/banner1.png" %>
+    <div class="row">
+      <div class="span6">
+          <h3><a href="#">个人信息保护声明</a></h3>
+          <ul>
+            <li>我们在处理您的个人信息时，会对您的隐私严加保护。当人们访问我们的网站时，我们就会对个人信息编译处理，这一过程遵守各国对类似网站管理的各项法律规定</li>
+            <li>您的个人信息仅用于您给与我们使用的目的范围之内。官方机构和权威对个人信息的编译处理仅在强制性的法律规定允许的情况下才可进行。我们的员工对信息保密具有责任和义务，他们会保护您提供给我们的任何个人信息。</li>
+    
+          </ul>
+          <h3><a href="#">久久珍藏声明</a></h3>
+          <ul>
+            <li>我们通过执行技术和组织的安全措施来保护您的个人信息，避免无意或有意对信息的操纵、丢失或损坏，阻止未被授权的人们获取个人信息。</li>
+            <li>了解情况权: 我们努力做到记录正确的信息并随时更新，但若存入错误的信息，我们会根据您的要求及时更正。
+            </li>
+            <li>如果您对我们的信息保护存有疑问，请及时联系。我们的信息保护办事人员将随时答复您的建议或投诉。</li>
+
+          </ul>
+      </div>
+
+      <div class="span6">
+
+<%=image_tag asset_path("total.jpg"), :height => "400px", :border=> "0", :usemap=>"#Map", :alt => "久久珍藏馆" %>
+<map name="Map">
+  <area shape="circle" coords="235,216,65" href="/users/sessions" target="_blank">
+  <area shape="circle" coords="172,73,66" href="/home/jiapu" target="_blank">
+  <area shape="circle" coords="104,209,64" href="/home/huiyi" target="_blank">
+  <area shape="circle" coords="312,75,66" href="/home/toolbox" target="_blank">
+  <area shape="circle" coords="383,211,64" href="/home/note" target="_blank">
+  <area shape="circle" coords="165,342,66" href="/home/zuopin" target="_blank">
+  <area shape="circle" coords="310,339,60" href="/home/jinian" target="_blank">
+</map>
+      </div>
+    </div>
   </div>
 </div>
 
-      
-<div class="jumbotron">
-  <h1>久久珍藏馆，相传到永远</h1>
-  <p class="lead text-left">如今的网络喧嚣无比，纷繁的信息充斥整个互联网世界，想留住的却稍纵即逝。有这么一个地方，它可以只属于你，它可以保存你所有值得珍藏的信息，并且永世传承下去，这就是久久珍藏馆.</p>
-  <a class="btn btn-large btn-success" href="#">现在就注册</a>
-</div>
-
-<div class="container">
-  <h3 class="short_headline"><span></span></h3>
-  <div class="row-fluid equal featured-columns">
-<table class="table table-bordered">
-  <tr><td colspan="3">我的珍藏馆</td></tr>
-  <tr>
-    <td><a href="#" class="s_title">家族树</a></td> 
-    <td><a href="#" class="s_title">作品集</a></td> 
-    <td><a href="#" class="s_title">日    记</a></td> 
-  </tr>
-  <tr>
-    <td><a href="#" class="s_title">纪念册</a></td> 
-    <td><a href="#" class="s_title">回忆录</a></td> 
-    <td><a href="#" class="s_title">保险箱</a></td> 
-  </tr>
-</table>
-  </div>
-</div>
 
 <!-- <div class="container">
   <h3 class="short_headline"><span></span></h3>

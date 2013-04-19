@@ -1,0 +1,17 @@
+---
+en:
+  active_record:
+    models:
+      page: Page
+    attributes:
+      page:
+        title: Title
+        body: Body
+        path_name: Path name
+        meta_keywords: Meta keywords
+        meta_description: Meta description
+        deletable: Deletable
+    errors:
+      page: 
+  helpers:
+    page: 

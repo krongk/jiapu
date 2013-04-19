@@ -42,7 +42,7 @@ gem 'rails-i18n', '~> 0.1.8'
 gem 'i18n_yaml_generator', '~> 0.0.1'
 
 #===Admin
-gem 'activeadmin', '~> 0.3.4'
+gem 'activeadmin', '~> 0.6.0'
 gem "meta_search",    '>= 1.1.0.pre'
 
 #===WYSIWYG Editor

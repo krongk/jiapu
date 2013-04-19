@@ -4,8 +4,8 @@ zh-CN:
     recent_key_words: "最近搜索的关键词"
     dashboard: "控制面板"
     dashboard_welcome:
-      welcome: "欢迎来到syixia后台. 这是默认的控制面板页."
-      call_to_action: "若要添加新的面板内容, 请修改 'app/admin/dashboards.rb'"
+      welcome: "欢迎来到后台. 这是默认的控制面板页."
+      call_to_action: "若要添加新的面板内容, 请修改dashboard"
     view: "查看"
     edit: "编辑"
     delete: "删除"
