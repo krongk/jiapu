@@ -1,0 +1,16 @@
+---
+en:
+  active_record:
+    models:
+      note: Note
+    attributes:
+      note:
+        user: User
+        note_date: Note date
+        title: Title
+        body: Body
+        image_path: Image path
+    errors:
+      note: 
+  helpers:
+    note: 

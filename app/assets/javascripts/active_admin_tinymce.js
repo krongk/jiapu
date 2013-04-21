@@ -2,7 +2,7 @@ $(document).ready(function() {
   //load_editors();
 
  // tinymce-jquery 方式
-  $('textarea').tinymce({
+  $('#page_body').tinymce({
     theme: 'advanced',
     language: "zh-cn",
     plugins: "table",

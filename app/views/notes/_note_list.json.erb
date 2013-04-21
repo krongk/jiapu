@@ -1,0 +1,25 @@
+<% @notes.each do |note| -%>
+                {
+                "startDate": "<%= note.note_date.year %>,<%= note.note_date.month %>,<%= note.note_date.day %>",
+                "headline": "<a href='<%= user_note_path(current_user, note)%>'><%= note.title %></a>",
+                "text":"",
+                "asset":
+                {
+                    "media":"<%= note.image_path %>",
+                    "credit":"",
+                    "thumbnail":"<%= note.image_path %>",
+                    "caption":"caption"
+                }
+          },
+<% end -%>
+          {
+                "startDate":"2013,12,25",
+                "headline":"Sh*t Vegans Say",
+                "text":"",
+                "asset":
+                {
+                    "media":"http://youtu.be/OmWFnd-p0Lw",
+                    "credit":"",
+                    "caption":""
+                }
+          }

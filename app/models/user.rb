@@ -12,11 +12,12 @@ class User < ActiveRecord::Base
   
   has_many :site_cates
   has_many :site_items
+  has_many :notes
 
   before_create :set_default_roles
   
   private
   def set_default_roles
-    self.roles = ['user']
+    self.roles = [Role.find_or_create_by_name('user')]
   end
 end

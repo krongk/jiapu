@@ -13,6 +13,15 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def title(page_title)
+    content_for(:title){ page_title}
+  end
+  def meta_keywords(meta_keywords)
+    content_for(:meta_keywords){ meta_keywords}
+  end
+  def meta_description(meta_description)
+    content_for(:meta_description){ meta_description}
+  end
   #flash动画显示
   # eg: play_flash("flash/top_banner.swf")
   # or: play_flash asset_path("flash/top_banner.swf"), :width => '985', :height => '249'

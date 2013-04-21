@@ -1,0 +1,16 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      note: 日志
+    attributes:
+      note:
+        user: 作者
+        note_date: 记录日期
+        title: 标题
+        body: 内容
+        image_path: 图片链接
+    errors:
+      note: 
+  helpers:
+    note: 

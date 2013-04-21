@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="span2 text-center" style="background: #eee;">
+    <%= render :partial => "users/user_nav" %>
+  </div>
+  <div class="span10">
+    <div class="content">
+
+<ul class="breadcrumb">
+  <li><%= link_to '日志', user_notes_path %><span class="divider">/</span></li>
+  <li class="active">日志列表<span class="divider">/</span></li>
+  <li class="active pull-right"><%= link_to '添加日志', new_user_note_path %></li>
+</ul>
+<div class="btn-group">
+  <button class="btn" id="notes_view_toggle_list">列表展示</button>
+  <button class="btn" id="notes_view_toggle_timeline">时间线展示</button>
+</div>
+
+<div id="notes_view_list">
+    <br/>
+    <table class="table table-striped table-hover">
+    <% @notes.order("created_at DESC").each do |note| %>
+      <tr>
+        <td><%= note.note_date %></td>
+        <td><%= note.title %></td>
+        <td><%= note.body.to_s.gsub(/<.*\/?>/, '').truncate(40) %></td>
+        <td><%= link_to '查看', user_note_path(current_user, note) %></td>
+        <td><%= link_to '编辑', edit_user_note_path(current_user, note) %></td>
+        <td><%= link_to '删除', user_note_path(current_user, note), method: :delete, data: { confirm: '确定删除?' } %></td>
+      </tr>
+    <% end %>
+    </table>
+    <%= will_paginate @notes %>
+</div>
+<div id="notes_view_timeline">
+    <%=render :partial => "note_calendar" %>
+</div>
+
+    </div>
+  </div>
+</div>
+

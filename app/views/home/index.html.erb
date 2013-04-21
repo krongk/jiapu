@@ -35,15 +35,27 @@
       <div class="span6">
 
 <%=image_tag asset_path("total.jpg"), :height => "400px", :border=> "0", :usemap=>"#Map", :alt => "久久珍藏馆" %>
-<map name="Map">
-  <area shape="circle" coords="235,216,65" href="/users/sessions" target="_blank">
-  <area shape="circle" coords="172,73,66" href="/home/jiapu" target="_blank">
-  <area shape="circle" coords="104,209,64" href="/home/huiyi" target="_blank">
-  <area shape="circle" coords="312,75,66" href="/home/toolbox" target="_blank">
-  <area shape="circle" coords="383,211,64" href="/home/note" target="_blank">
-  <area shape="circle" coords="165,342,66" href="/home/zuopin" target="_blank">
-  <area shape="circle" coords="310,339,60" href="/home/jinian" target="_blank">
-</map>
+<% if user_signed_in? %>
+  <map name="Map">
+    <area shape="circle" coords="235,216,65" href="/users/<%= current_user.id %>">
+    <area shape="circle" coords="172,73,66"  href="/home/jiapu">
+    <area shape="circle" coords="104,209,64" href="/home/huiyi">
+    <area shape="circle" coords="312,75,66"  href="/home/toolbox">
+    <area shape="circle" coords="383,211,64" href="/home/note">
+    <area shape="circle" coords="165,342,66" href="/home/zuopin">
+    <area shape="circle" coords="310,339,60" href="/home/jinian">
+  </map>
+<% else %>
+  <map name="Map">
+    <area shape="circle" coords="235,216,65" href="/users/sign_in" target="_blank">
+    <area shape="circle" coords="172,73,66"  href="/home/jiapu" target="_blank">
+    <area shape="circle" coords="104,209,64" href="/home/huiyi" target="_blank">
+    <area shape="circle" coords="312,75,66"  href="/home/toolbox" target="_blank">
+    <area shape="circle" coords="383,211,64" href="/home/note" target="_blank">
+    <area shape="circle" coords="165,342,66" href="/home/zuopin" target="_blank">
+    <area shape="circle" coords="310,339,60" href="/home/jinian" target="_blank">
+  </map>
+<% end %>
       </div>
     </div>
   </div>

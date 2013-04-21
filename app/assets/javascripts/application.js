@@ -18,4 +18,5 @@
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
 //= require home
+//= require notes
 

@@ -1,0 +1,14 @@
+{
+    "timeline":
+    {
+        "headline": "时间线日志",
+        "type": "default",
+        "text": "日志",
+        "startDate": "2012,2,26",
+        "date": 
+            [
+                <%= render(:partial => "note_list") %>
+            ]
+    }
+}
+

@@ -10,7 +10,9 @@ RailsComposerApp2::Application.routes.draw do
 
   resources :pages
 
-  resources :users
+  resources :users do
+    resources :notes
+  end
 
   get "home/jiapu"
   get "home/note"
@@ -19,6 +21,7 @@ RailsComposerApp2::Application.routes.draw do
   get "home/zuopin"
   get "home/toolbox"
   get "home/index"
+  get "notes/events"
 
   
 end

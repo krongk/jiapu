@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130326085239) do
+ActiveRecord::Schema.define(:version => 20130421041045) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -46,15 +46,27 @@ ActiveRecord::Schema.define(:version => 20130326085239) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
-  create_table "pages", :force => true do |t|
-    t.string   "title",            :default => "", :null => false
+  create_table "notes", :force => true do |t|
+    t.integer  "user_id"
+    t.date     "note_date"
+    t.string   "title"
     t.text     "body"
+    t.string   "image_path"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "notes", ["user_id"], :name => "index_notes_on_user_id"
+
+  create_table "pages", :force => true do |t|
+    t.string   "title",            :limit => 512,      :default => "", :null => false
+    t.text     "body",             :limit => 16777215
     t.string   "path_name"
-    t.string   "meta_keywords"
-    t.string   "meta_description"
-    t.integer  "deletable",        :default => 0
-    t.datetime "created_at",                       :null => false
-    t.datetime "updated_at",                       :null => false
+    t.string   "meta_keywords",    :limit => 512
+    t.string   "meta_description", :limit => 512
+    t.integer  "deletable",                            :default => 0
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
   end
 
   add_index "pages", ["path_name"], :name => "index_pages_on_path_name", :unique => true

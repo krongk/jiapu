@@ -1,0 +1,14 @@
+<%= simple_form_for([current_user, @note]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :note_date %>
+    <%= f.input :title, :input_html =>{:style=> "width: 655px;"} %>
+    <%= f.input :body, :input_html =>{:rows => 8, :cols => 60, :style => "width: 655px;"}  %>
+    <%= f.input :image_path %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
