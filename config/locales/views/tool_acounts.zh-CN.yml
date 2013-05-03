@@ -1,0 +1,20 @@
+---
+zh-CN:
+  tool_acounts:
+    index:
+      title: Tool acounts
+    show:
+      title: Tool acount
+    edit:
+      title: Editing Tool acount
+    new:
+      title: New Tool acount
+  flash:
+    tool_acounts:
+      create:
+        notice: ! '%{resource_name} was successfully created.'
+      update:
+        notice: ! '%{resource_name} was successfully updated.'
+      destroy:
+        notice: ! '%{resource_name} was successfully deleted.'
+        alert: ! '%{resource_name} could not be deleted.'

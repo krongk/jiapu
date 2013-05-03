@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130428040147) do
+ActiveRecord::Schema.define(:version => 20130503151041) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -127,14 +127,42 @@ ActiveRecord::Schema.define(:version => 20130428040147) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "tool_acounts", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "password"
+    t.string   "password_tips"
+    t.string   "email"
+    t.string   "note"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "tool_acounts", ["user_id"], :name => "index_tool_acounts_on_user_id"
+
+  create_table "tool_items", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.string   "name"
+    t.string   "password"
+    t.string   "password_tips"
+    t.string   "note"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "tool_items", ["user_id"], :name => "index_tool_items_on_user_id"
+
   create_table "uploads", :force => true do |t|
-    t.integer  "resource_id"
+    t.integer  "user_id",                                    :null => false
+    t.string   "resource_type",       :default => "default", :null => false
+    t.integer  "resource_id",                                :null => false
     t.string   "upload_file_name"
     t.string   "upload_content_type"
     t.string   "upload_file_size"
     t.datetime "upload_updated_at"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
   end
 
   create_table "users", :force => true do |t|

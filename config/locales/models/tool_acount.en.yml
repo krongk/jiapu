@@ -1,0 +1,17 @@
+---
+en:
+  active_record:
+    models:
+      tool_acount: Tool acount
+    attributes:
+      tool_acount:
+        user: User
+        name: Name
+        password: Password
+        password_tips: Password tips
+        email: Email
+        note: Note
+    errors:
+      tool_acount: 
+  helpers:
+    tool_acount: 

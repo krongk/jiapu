@@ -1,0 +1,17 @@
+---
+zh-CN:
+  active_record:
+    models:
+      tool_item: Tool item
+    attributes:
+      tool_item:
+        user: User
+        title: Title
+        name: Name
+        password: Password
+        password_tips: Password tips
+        note: Note
+    errors:
+      tool_item: 
+  helpers:
+    tool_item: 

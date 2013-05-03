@@ -1,0 +1,33 @@
+<h1>Listing tool_acounts</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Password tips</th>
+    <th>Email</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tool_acounts.each do |tool_acount| %>
+  <tr>
+    <td><%= tool_acount.user %></td>
+    <td><%= tool_acount.name %></td>
+    <td><%= tool_acount.password %></td>
+    <td><%= tool_acount.password_tips %></td>
+    <td><%= tool_acount.email %></td>
+    <td><%= tool_acount.note %></td>
+    <td><%= link_to 'Show', tool_acount %></td>
+    <td><%= link_to 'Edit', edit_tool_acount_path(tool_acount) %></td>
+    <td><%= link_to 'Destroy', tool_acount, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tool acount', new_tool_acount_path %>

@@ -49,21 +49,22 @@ class User < ActiveRecord::Base
     #create huiyi cate
     self.huiyi_cates.create(:title => '回忆录')
     #create jinian cate
-    self.jinian_cates.create(:parent_id => 0, :title => '毕业纪念册')
-    self.jinian_cates.create(:parent_id => 0, :title => '结婚纪念册')
+    self.jinian_cates.create(:parent_id => 0, :title => '成长纪念册')
+    j_cate1 = self.jinian_cates.create!(:parent_id => 0, :title => '毕业纪念册')
+    j_cate2 = self.jinian_cates.create!(:parent_id => 0, :title => '结婚纪念册')
     self.jinian_cates.create(:parent_id => 0, :title => '生日纪念册')
     self.jinian_cates.create(:parent_id => 0, :title => '新年聚会纪念册')
     self.jinian_cates.create(:parent_id => 0, :title => '游记')
 
-    self.jinian_cates.create(:parent_id => 1, :title => '幼儿园纪念')
-    self.jinian_cates.create(:parent_id => 1, :title => '小学纪念')
-    self.jinian_cates.create(:parent_id => 1, :title => '初中纪念')
-    self.jinian_cates.create(:parent_id => 1, :title => '高中纪念')
-    self.jinian_cates.create(:parent_id => 1, :title => '大学纪念')
+    self.jinian_cates.create(:parent_id => j_cate1.id, :title => '幼儿园纪念')
+    self.jinian_cates.create(:parent_id => j_cate1.id, :title => '小学纪念')
+    self.jinian_cates.create(:parent_id => j_cate1.id, :title => '初中纪念')
+    self.jinian_cates.create(:parent_id => j_cate1.id, :title => '高中纪念')
+    self.jinian_cates.create(:parent_id => j_cate1.id, :title => '大学纪念')
     
-    self.jinian_cates.create(:parent_id => 2, :title => '恋爱故事')
-    self.jinian_cates.create(:parent_id => 2, :title => '婚礼纪念')
-    self.jinian_cates.create(:parent_id => 2, :title => '结婚周年')
+    self.jinian_cates.create(:parent_id => j_cate2.id, :title => '恋爱故事')
+    self.jinian_cates.create(:parent_id => j_cate2.id, :title => '婚礼纪念')
+    self.jinian_cates.create(:parent_id => j_cate2.id, :title => '结婚周年')
   
   end
 

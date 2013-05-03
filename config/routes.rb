@@ -1,5 +1,11 @@
 RailsComposerApp2::Application.routes.draw do
  
+  resources :tool_items
+
+
+  resources :tool_acounts
+
+
   resources :uploads
 
   devise_for :users

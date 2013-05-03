@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @tool_acount.user %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @tool_acount.name %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @tool_acount.password %>
+</p>
+
+<p>
+  <b>Password tips:</b>
+  <%= @tool_acount.password_tips %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @tool_acount.email %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @tool_acount.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_tool_acount_path(@tool_acount) %> |
+<%= link_to 'Back', tool_acounts_path %>
