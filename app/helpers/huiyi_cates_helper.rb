@@ -1,0 +1,2 @@
+module HuiyiCatesHelper
+end

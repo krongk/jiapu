@@ -1,0 +1,14 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      zuopin_cate: 作品集分类
+    attributes:
+      zuopin_cate:
+        user: 用户
+        title: 名称
+        type: 类别
+    errors:
+      zuopin_cate: 
+  helpers:
+    zuopin_cate: 

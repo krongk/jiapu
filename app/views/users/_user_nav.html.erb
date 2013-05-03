@@ -1,71 +1,16 @@
+<%# encoding: utf-8 %>
 
 <div class="primary-sidebar text-left">
   <!-- Main nav -->
   <ul class="nav nav-collapse collapse nav-collapse-primary">
             <li class="active">
               <span class="glow"></span>
-              <a href="dashboard.html">
+              <%=link_to user_path(current_user) do %>
                   <i class="icon-dashboard icon-2x"></i>
                   <span>个人中心</span>
-              </a>
+              <% end %>
             </li>
-     <!--        <li class="dark-nav ">
-
-              <span class="glow"></span>
-
-              
-
-              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZd">
-                  <i class="icon-beaker icon-2x"></i>
-                    <span>
-                      快捷菜单
-                      <i class="icon-caret-down"></i>
-                    </span>
-
-              </a>
-
-              <ul id="aDqUL3qcZd" class="collapse ">
-                
-                    <li class="">
-                      <a href="../ui_lab/buttons.html">
-                          <i class="icon-hand-up"></i> Buttons
-                      </a>
-                    </li>
-                
-                    <li class="">
-                      <a href="../ui_lab/general.html">
-                          <i class="icon-beaker"></i> General elements
-                      </a>
-                    </li>
-                
-                    <li class="">
-                      <a href="../ui_lab/icons.html">
-                          <i class="icon-info-sign"></i> Icons
-                      </a>
-                    </li>
-                
-                    <li class="">
-                      <a href="../ui_lab/grid.html">
-                          <i class="icon-th-large"></i> Grid
-                      </a>
-                    </li>
-                
-                    <li class="">
-                      <a href="../ui_lab/tables.html">
-                          <i class="icon-table"></i> Tables
-                      </a>
-                    </li>
-                
-                    <li class="">
-                      <a href="../ui_lab/widgets.html">
-                          <i class="icon-plus-sign-alt"></i> Widgets
-                      </a>
-                    </li>
-                
-              </ul>
-
-            </li>
- -->
+    
             <li class="">
               <span class="glow"></span>
               <a href="#">
@@ -75,24 +20,63 @@
             </li>
             <li class="">
               <span class="glow"></span>
-              <a href="#">
-                  <i class="icon-group icon-2x"></i>
-                  <span>作品集</span>
+              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZuopin">
+                  <i class="icon-link icon-2x"></i>
+                    <span>
+                      作品集
+                      <i class="icon-caret-down"></i>
+                    </span>
               </a>
+                  <ul id="aDqUL3qcZuopin" class="collapse ">
+                  <% current_user.zuopin_cates.each do |item| %>
+                    <li class="">
+                      <%= link_to user_zuopin_cate_path(current_user, item) do %>
+                          <i class="icon-hand-up"></i><%= item.title %>
+                      <% end %>
+                    </li>
+                  <% end %>
+                  </ul>
             </li>
             <li class="">
               <span class="glow"></span>
-              <a href="#">
-                  <i class="icon-edit icon-2x"></i>
-                  <span>纪念册</span>
+              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZd">
+                  <i class="icon-link icon-2x"></i>
+                    <span>
+                      纪念册
+                      <i class="icon-caret-down"></i>
+                    </span>
               </a>
+                  <ul id="aDqUL3qcZd" class="collapse ">
+                    <% current_user.jinian_cates.select{|s| s.parent_id == 0}.each do |item| %>
+                      <% if item.sub_cates.any? %>
+                        <li class="">
+                          <a class="accordion-toggle collapsed " data-toggle="collapse" href="#jinianzz-<%=item.id%>"><span><%=item.title %><i class="icon-caret-down"></i></span></a>
+                          <ul id="jinianzz-<%=item.id%>" class="collapse ">
+                            <% item.sub_cates.each do |sub_item| %>
+                              <li class="">
+                                <%= link_to user_jinian_cate_path(current_user, sub_item) do %>
+                                  <i class="icon-hand-up"></i><%= sub_item.title %>
+                                <% end %>
+                              </li>
+                            <% end %>
+                          </ul>
+                        </li>
+                      <% else %>
+                        <li class="">
+                          <%= link_to user_jinian_cate_path(current_user, item) do %>
+                            <%= item.title %>
+                          <% end %>
+                        </li>
+                      <% end %>
+                    <% end %>
+                  </ul>
             </li>
             <li class="">
               <span class="glow"></span>
-              <a href="#">
-                  <i class="icon-tint icon-2x"></i>
+              <%= link_to user_huiyi_items_path(current_user) do %>
+                  <i class="icon-leaf icon-2x"></i>
                   <span>回忆录</span>
-              </a>
+              <% end %>
             </li>
             <li class="">
               <span class="glow"></span>

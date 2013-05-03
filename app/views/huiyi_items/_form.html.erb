@@ -1,0 +1,13 @@
+<%= simple_form_for([current_user, @huiyi_item]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :note_date %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

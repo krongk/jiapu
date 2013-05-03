@@ -1,0 +1,29 @@
+<h1>Listing zuopin_items</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Zuopin cate</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @zuopin_items.each do |zuopin_item| %>
+  <tr>
+    <td><%= zuopin_item.user %></td>
+    <td><%= zuopin_item.zuopin_cate %></td>
+    <td><%= zuopin_item.title %></td>
+    <td><%= zuopin_item.body %></td>
+    <td><%= link_to 'Show', zuopin_item %></td>
+    <td><%= link_to 'Edit', edit_zuopin_item_path(zuopin_item) %></td>
+    <td><%= link_to 'Destroy', zuopin_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Zuopin item', new_zuopin_item_path %>

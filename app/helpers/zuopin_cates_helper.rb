@@ -1,0 +1,2 @@
+module ZuopinCatesHelper
+end

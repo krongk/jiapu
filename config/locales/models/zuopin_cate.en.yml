@@ -1,0 +1,14 @@
+---
+en:
+  active_record:
+    models:
+      zuopin_cate: Zuopin cate
+    attributes:
+      zuopin_cate:
+        user: User
+        title: Title
+        type: Type
+    errors:
+      zuopin_cate: 
+  helpers:
+    zuopin_cate: 

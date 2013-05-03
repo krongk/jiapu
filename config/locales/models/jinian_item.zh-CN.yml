@@ -1,0 +1,17 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      jinian_item: 纪念项
+    attributes:
+      jinian_item:
+        jinian_cate: 类别
+        user_id: 用户
+        upload_id: 文件
+        title: 标题
+        body: 内容
+        note_date: 日期
+    errors:
+      jinian_item: 
+  helpers:
+    jinian_item: 

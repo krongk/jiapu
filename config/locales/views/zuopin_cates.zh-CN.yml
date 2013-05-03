@@ -1,0 +1,33 @@
+---
+zh-CN:
+  zuopin_cates:
+    index:
+      title: 作品集
+    show:
+      title: 作品集
+    edit:
+      title: 编辑作品集
+    new:
+      title: 新建作品集
+  flash:
+    zuopin_cates:
+      create:
+        notice: ! '%{resource_name} 添加成功.'
+      update:
+        notice: ! '%{resource_name} 修改成功.'
+      destroy:
+        notice: ! '%{resource_name} 删除成功.'
+        alert: ! '%{resource_name} 无法删除.'
+  simple_form:
+    labels:
+      zuopin_cates:
+        title: '名称'
+        cate: '类别'
+    placeholders:
+      zuopin_cates:
+        title: '输入名称'
+        cate: '选择类别'
+    hint:
+      zuopin_cates:
+        title: '输入名称'
+        cate: '类别'

@@ -29,6 +29,10 @@ gem "figaro", ">= 0.6.3"
 gem "better_errors", ">= 0.7.2", :group => :development
 gem "binding_of_caller", ">= 0.7.1", :group => :development, :platforms => [:mri_19, :rbx]
 
+gem 'jquery-fileupload-rails'
+gem 'paperclip'
+#gem 'twitter-bootstrap-rails'
+
 #not for windows but for linux
 # gem "libv8", ">= 3.11.8"
 # gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
@@ -47,7 +51,7 @@ gem "meta_search",    '>= 1.1.0.pre'
 
 #===WYSIWYG Editor
 gem 'tinymce-rails', '~> 3.4.7'
-
+#gem 'tinymce-rails-imageupload', '~> 3.5.6.3'
 #===Chinese Misic
 gem 'chinese_pinyin'
 

@@ -18,4 +18,4 @@ zh-CN:
         remember_me: '记住登录状态'
     hint:
       user:
-        password: 'sdfds'
+        password: '密码'

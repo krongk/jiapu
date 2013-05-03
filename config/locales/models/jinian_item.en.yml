@@ -1,0 +1,17 @@
+---
+en:
+  active_record:
+    models:
+      jinian_item: Jinian item
+    attributes:
+      jinian_item:
+        jinian_cate: Jinian cate
+        user_id: User
+        upload_id: Upload
+        title: Title
+        body: Body
+        note_date: Note date
+    errors:
+      jinian_item: 
+  helpers:
+    jinian_item: 

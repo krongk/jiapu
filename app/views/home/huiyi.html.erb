@@ -1,16 +1,15 @@
 <div class="well" style="padding: 0px;">
   <div class="row">
     <div class="span12">
-    <%=image_tag asset_path("banner4.png"), :width => '940px'%>
+    <%#=image_tag asset_path("banner4.png"), :width => '940px'%>
+    <%=play_flash("/assets/flash/huiyi.swf") %>
     </div>
   </div>
 </div>
 
       
 <div class="jumbotron">
-  <h1>回忆录</h1>
-  <p class="lead text-left">一生走过的路！<br/>
-    如今的网络喧嚣无比，纷繁的信息充斥整个互联网世界，想留住的却稍纵即逝。有这么一个地方，它可以只属于你，它可以保存你所有值得珍藏的信息，并且永世传承下去，这就是久久珍藏馆.</p>
-  <a class="btn btn-large btn-success" href="#">现在就注册</a>
+  <%= link_to image_tag(asset_path("huiyi-1.png"), :width => '940px'), '/users/sign_up'%>
+  <br/><br/>
 </div>
 

@@ -17,27 +17,30 @@
     <![endif]-->
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
-    <script type="text/javascript">
-      $(document).ready(function(){
-
-          $('#slide_banner').cycle({ 
-          fx:      'fade', 
-          speed: 1000,
-          timeout: 5000,
-          delay:   -3000 
-        });
-
-      });
-    </script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
     <div class="container-narrow">
-
     <%= render :partial => "layouts/navigation" %>
-<hr/>
+    <hr/>
 
-   <%= yield %>
-   
+<% if user_signed_in? %> 
+<div class="row">
+  <div class="span2 text-center" style="background: #eee;">
+    <%= render :partial => "users/user_nav" %>
+  </div>
+  <div class="span10 user_container">
+    <div class="content">
+      <%= yield(:title_nav) %>
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
+<% else %>
+    <%= render 'layouts/messages' %>
+    <%= yield %>
+<% end %>
+
     </div> <!-- /container -->
      <div class="container-narrow">
      <%= render :partial => "layouts/footer" %>

@@ -1,0 +1,13 @@
+---
+en:
+  active_record:
+    models:
+      huiyi_cate: Huiyi cate
+    attributes:
+      huiyi_cate:
+        user: User
+        title: Title
+    errors:
+      huiyi_cate: 
+  helpers:
+    huiyi_cate: 

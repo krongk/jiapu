@@ -1,27 +1,28 @@
+#encoding: utf-8
 class UsersController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    authorize! :index, @user, :message => 'Not authorized as an administrator.'
+    authorize! :index, @user, :message => '没有管理员权限.'
     @users = User.order("updated_at DESC").paginate(:page => params[:page]|| 1, :per_page => 20)
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = current_user || User.find(params[:id])
   end
   
   def update
-    authorize! :update, @user, :message => 'Not authorized as an administrator.'
+    authorize! :update, @user, :message => '没有管理员权限.'
     @user = User.find(params[:id])
     if @user.update_attributes(params[:user], :as => :admin)
-      redirect_to users_path, :notice => "User updated."
+      redirect_to user_path(@user), :notice => "更新成功."
     else
-      redirect_to users_path, :alert => "Unable to update user."
+      redirect_to user_path(@user), :alert => "更新失败."
     end
   end
     
   def destroy
-    authorize! :destroy, @user, :message => 'Not authorized as an administrator.'
+    authorize! :destroy, @user, :message => '没有管理员权限'
     user = User.find(params[:id])
     unless user == current_user
       user.destroy

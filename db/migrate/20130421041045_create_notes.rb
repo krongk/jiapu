@@ -1,9 +1,9 @@
 class CreateNotes < ActiveRecord::Migration
   def change
     create_table :notes do |t|
-      t.references :user
+      t.references :user, :null => false
       t.date :note_date
-      t.string :title
+      t.string :title, :null => false
       t.text :body
       t.string :image_path
 

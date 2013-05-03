@@ -1,0 +1,16 @@
+---
+en:
+  active_record:
+    models:
+      upload: Upload
+    attributes:
+      upload:
+        resource_id: Resource
+        upload_file_name: Upload file name
+        upload_content_type: Upload content type
+        upload_file_size: Upload file size
+        upload_updated_at: Upload updated at
+    errors:
+      upload: 
+  helpers:
+    upload: 

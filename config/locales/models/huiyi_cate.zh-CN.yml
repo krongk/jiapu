@@ -1,0 +1,13 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      huiyi_cate: 回忆录分类
+    attributes:
+      huiyi_cate:
+        user: 用户
+        title: 名称
+    errors:
+      huiyi_cate: 
+  helpers:
+    huiyi_cate: 

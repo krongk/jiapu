@@ -25,8 +25,8 @@ module ApplicationHelper
   #flash动画显示
   # eg: play_flash("flash/top_banner.swf")
   # or: play_flash asset_path("flash/top_banner.swf"), :width => '985', :height => '249'
-  def play_flash(src, options = {:width=>'600', :height=>'400'})
-    str = "<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='"+ options[:width] +"' height='"+ options[:height] +"' id='FlashID' accesskey='1' tabindex='1' title='daiii'>
+  def play_flash(src, options = {:width=>'940', :height=>'200'})
+    str = "<object classid='clsid:D27CDB6E-AE6D-11cf-96B8-444553540000' width='"+ options[:width] +"' height='"+ options[:height] +"' id='FlashID' accesskey='1' tabindex='1' title=''>
         <param name='movie' value='" + src + "' />
         <param name='quality' value='high' />
         <param name='wmode' value='transparent' />

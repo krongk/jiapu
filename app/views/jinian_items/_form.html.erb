@@ -1,0 +1,18 @@
+<%= simple_form_for([current_user, @jinian_item]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%#= f.association :jinian_cate, :collection => current_user.jinian_cates, :selected => params[:jinian_cate_id]%>
+    <%#= f.input :user_id %>
+    <%#= f.input :upload_id %>
+    <%#= f.input :jinian_cate, :html_input => {:type => 'hidden', :value =>  params[:jinian_cate_id]}%>
+    <input name="jinian_item[jinian_cate_id]" type="hidden" value="<%= params[:jinian_cate_id] %>" />
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :note_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

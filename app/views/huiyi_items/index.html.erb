@@ -1,0 +1,32 @@
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">回忆录</li>
+
+    <li class="active pull-right"><%= link_to '添加回忆', new_user_huiyi_item_path %></li>
+  </ul>
+<% end %>
+
+
+<% if @huiyi_items.empty? %>
+    <div class="well">
+        还没有任何回忆哟！~ 现在就 <%=link_to  "添加回忆",  new_user_huiyi_item_path(current_user) %>.
+    </div>
+<% end %>
+
+<table class="table table-hover">
+<% @huiyi_items.each do |huiyi_item| %>
+  <tr>
+    <td width="15%"><%= huiyi_item.note_date %></td>
+    <td width="70%" align="left"><%= huiyi_item.title %></td>
+    <td width="15%"><div class="text-right">
+        <%= link_to '查看', user_huiyi_item_path(current_user, huiyi_item) %>
+        <%= link_to '编辑', edit_user_huiyi_item_path(current_user, huiyi_item) %>
+        <%= link_to '删除', user_huiyi_item_path(current_user, huiyi_item), method: :delete, data: { confirm: '真的要删除吗?' } %>
+    </div>
+    </td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

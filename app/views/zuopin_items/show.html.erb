@@ -1,0 +1,19 @@
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active"><%=link_to @zuopin_item.zuopin_cate.title, user_zuopin_cate_path(current_user, @zuopin_item.zuopin_cate) %><span class="divider">/</span></li>
+
+    <li class="active pull-right"><%= link_to '删除', user_zuopin_item_path(current_user, @zuopin_item), method: :delete, data: { confirm: '确定要删除?' } %></li>
+    <li class="active pull-right"><%= link_to '编辑', edit_user_zuopin_item_path(current_user, @zuopin_item) %><span class="divider"> | </span></li>
+    <li class="active pull-right"><%= link_to '添加作品', new_user_zuopin_item_path(:zuopin_cate_id => @zuopin_item.zuopin_cate.id) %><span class="divider"> | </span></li>
+  </ul>
+<% end %>
+
+
+<h1>
+  <%= @zuopin_item.title %>
+</h1>
+
+<div class="well bg-white">
+  <%=simple_format @zuopin_item.body.html_safe %>
+</div>
+

@@ -1,0 +1,21 @@
+<h1><%= @huiyi_item.title %></h1>
+
+<div class="breadcrumb">
+  <%= @huiyi_item.note_date %>
+</div>
+
+<div class="well bg-white">
+  <%=simple_format @huiyi_item.body.html_safe %>
+</div>
+
+
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active"><%=link_to @huiyi_item.huiyi_cate.title, user_huiyi_cate_path(current_user, @huiyi_item.huiyi_cate) %><span class="divider">/</span></li>
+
+    <li class="active pull-right"><%= link_to '删除', user_huiyi_item_path(current_user, @huiyi_item), method: :delete, data: { confirm: '确定要删除?' } %></li>
+    <li class="active pull-right"><%= link_to '编辑', edit_user_huiyi_item_path(current_user, @huiyi_item) %><span class="divider"> | </span></li>
+    <li class="active pull-right"><%= link_to '添加回忆录', new_user_huiyi_item_path(:huiyi_cate_id => @huiyi_item.huiyi_cate.id) %><span class="divider"> | </span></li>
+  </ul>
+<% end %>
+

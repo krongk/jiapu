@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130421041045) do
+ActiveRecord::Schema.define(:version => 20130428040147) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -45,6 +45,51 @@ ActiveRecord::Schema.define(:version => 20130421041045) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "huiyi_cates", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.string   "title",      :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "huiyi_cates", ["user_id"], :name => "index_huiyi_cates_on_user_id"
+
+  create_table "huiyi_items", :force => true do |t|
+    t.integer  "user_id",       :null => false
+    t.integer  "huiyi_cate_id", :null => false
+    t.date     "note_date",     :null => false
+    t.string   "title",         :null => false
+    t.text     "body"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "huiyi_items", ["huiyi_cate_id"], :name => "index_huiyi_items_on_huiyi_cate_id"
+  add_index "huiyi_items", ["user_id"], :name => "index_huiyi_items_on_user_id"
+
+  create_table "jinian_cates", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "parent_id"
+    t.string   "title"
+    t.text     "body"
+    t.date     "note_date"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "jinian_items", :force => true do |t|
+    t.integer  "jinian_cate_id"
+    t.integer  "user_id"
+    t.integer  "upload_id"
+    t.string   "title"
+    t.text     "body"
+    t.date     "note_date"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "jinian_items", ["jinian_cate_id"], :name => "index_jinian_items_on_jinian_cate_id"
 
   create_table "notes", :force => true do |t|
     t.integer  "user_id"
@@ -82,6 +127,16 @@ ActiveRecord::Schema.define(:version => 20130421041045) do
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
+  create_table "uploads", :force => true do |t|
+    t.integer  "resource_id"
+    t.string   "upload_file_name"
+    t.string   "upload_content_type"
+    t.string   "upload_file_size"
+    t.datetime "upload_updated_at"
+    t.datetime "created_at",          :null => false
+    t.datetime "updated_at",          :null => false
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
     t.string   "encrypted_password",     :default => "", :null => false
@@ -107,5 +162,27 @@ ActiveRecord::Schema.define(:version => 20130421041045) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "zuopin_cates", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.string   "title",      :null => false
+    t.string   "cate",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "zuopin_cates", ["user_id"], :name => "index_zuopin_cates_on_user_id"
+
+  create_table "zuopin_items", :force => true do |t|
+    t.integer  "user_id",        :null => false
+    t.integer  "zuopin_cate_id", :null => false
+    t.string   "title",          :null => false
+    t.text     "body",           :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "zuopin_items", ["user_id"], :name => "index_zuopin_items_on_user_id"
+  add_index "zuopin_items", ["zuopin_cate_id"], :name => "index_zuopin_items_on_zuopin_cate_id"
 
 end

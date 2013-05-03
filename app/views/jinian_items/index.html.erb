@@ -1,0 +1,33 @@
+<h1>Listing jinian_items</h1>
+
+<table>
+  <tr>
+    <th>Jinian cate</th>
+    <th>User</th>
+    <th>Upload</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Note date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jinian_items.each do |jinian_item| %>
+  <tr>
+    <td><%= jinian_item.jinian_cate %></td>
+    <td><%= jinian_item.user_id %></td>
+    <td><%= jinian_item.upload_id %></td>
+    <td><%= jinian_item.title %></td>
+    <td><%= jinian_item.body %></td>
+    <td><%= jinian_item.note_date %></td>
+    <td><%= link_to 'Show', jinian_item %></td>
+    <td><%= link_to 'Edit', edit_jinian_item_path(jinian_item) %></td>
+    <td><%= link_to 'Destroy', jinian_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jinian item', new_jinian_item_path %>

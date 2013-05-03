@@ -1,0 +1,20 @@
+---
+en:
+  zuopin_cates:
+    index:
+      title: Zuopin cates
+    show:
+      title: Zuopin cate
+    edit:
+      title: Editing Zuopin cate
+    new:
+      title: New Zuopin cate
+  flash:
+    zuopin_cates:
+      create:
+        notice: ! '%{resource_name} was successfully created.'
+      update:
+        notice: ! '%{resource_name} was successfully updated.'
+      destroy:
+        notice: ! '%{resource_name} was successfully deleted.'
+        alert: ! '%{resource_name} could not be deleted.'

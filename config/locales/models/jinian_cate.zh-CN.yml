@@ -1,0 +1,15 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      jinian_cate: 纪念册
+    attributes:
+      jinian_cate:
+        parent_id: 父类
+        title: 名称
+        body: 描述
+        note_date: 记录日期
+    errors:
+      jinian_cate: 
+  helpers:
+    jinian_cate: 

@@ -1,0 +1,11 @@
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">作品集合<span class="divider">/</span></li>
+    <li class="active pull-right"><%= link_to '编辑专辑', edit_user_zuopin_cate_path(current_user, @zuopin_cate) %></li>
+    <li class="active pull-right"><%= link_to '添加专辑', new_user_zuopin_cate_path %><span class="divider">/</span></li>
+    <li class="active pull-right"><%= link_to '添加作品', new_user_zuopin_item_path %><span class="divider">/</span></li>
+  </ul>
+<% end %>
+
+<%= render 'form' %>
+

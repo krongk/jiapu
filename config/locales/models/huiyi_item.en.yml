@@ -1,0 +1,16 @@
+---
+en:
+  active_record:
+    models:
+      huiyi_item: Huiyi item
+    attributes:
+      huiyi_item:
+        user: User
+        huiyi_cate: Huiyi cate
+        note_date: Note date
+        title: Title
+        body: Body
+    errors:
+      huiyi_item: 
+  helpers:
+    huiyi_item: 

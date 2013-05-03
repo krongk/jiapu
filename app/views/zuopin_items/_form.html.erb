@@ -1,0 +1,13 @@
+<%= simple_form_for([current_user, @zuopin_item]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :zuopin_cate, :collection => current_user.zuopin_cates, :selected => params[:zuopin_cate_id] %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

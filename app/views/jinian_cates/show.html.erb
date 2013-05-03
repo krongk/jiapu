@@ -1,0 +1,14 @@
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">纪念册<span class="divider">/</span></li>
+    <li class="active"><%= @jinian_cate.title %></li>
+
+    <li class="active pull-right"><%= link_to '删除纪念册', user_jinian_cate_path(current_user, @jinian_cate), method: :delete, data: { confirm: '删除纪念册，将删除该纪念册下的所有内容， 确定要删除吗?' } %></li>
+    <li class="active pull-right"><%= link_to '编辑', edit_user_jinian_cate_path(current_user, @jinian_cate) %><span class="divider">  |  </span></li>
+    <li class="active pull-right"><%= link_to '添加照片', new_user_jinian_item_path(:jinian_cate_id => @jinian_cate.id) %><span class="divider">  |  </span></li>
+  </ul>
+<% end %>
+
+<p>
+  <b><%= @jinian_cate.title %></b>
+</p>

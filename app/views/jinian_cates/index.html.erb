@@ -1,0 +1,29 @@
+<h1>Listing jinian_cates</h1>
+
+<table>
+  <tr>
+    <th>Parent</th>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Note date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jinian_cates.each do |jinian_cate| %>
+  <tr>
+    <td><%= jinian_cate.parent_id %></td>
+    <td><%= jinian_cate.title %></td>
+    <td><%= jinian_cate.body %></td>
+    <td><%= jinian_cate.note_date %></td>
+    <td><%= link_to 'Show', jinian_cate %></td>
+    <td><%= link_to 'Edit', edit_jinian_cate_path(jinian_cate) %></td>
+    <td><%= link_to 'Destroy', jinian_cate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jinian cate', new_jinian_cate_path %>

@@ -17,6 +17,8 @@
 //= require tinymce
 //= require bootstrap-modal
 //= require bootstrap-modalmanager
+//= require jquery-fileupload
+//= require jquery-fileupload/locale
 //= require home
 //= require notes
 

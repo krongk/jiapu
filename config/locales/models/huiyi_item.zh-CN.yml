@@ -1,0 +1,16 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      huiyi_item: 回忆录
+    attributes:
+      huiyi_item:
+        user: 用户
+        huiyi_cate: 分类
+        note_date: 记录日期
+        title: 标题
+        body: 内容
+    errors:
+      huiyi_item: 
+  helpers:
+    huiyi_item: 

@@ -1,11 +1,35 @@
-<h2>用户注册</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.error_notification %>
-  <%= display_base_errors resource %>
-  <%= f.input :name, :autofocus => true %>
-  <%= f.input :email, :required => true %>
-  <%= f.input :password, :required => true %>
-  <%= f.input :password_confirmation, :required => true %>
-  <%= f.button :submit, :class => 'btn-primary' %>
-<% end %>
-<%= render "devise/shared/links" %>
+<div class="row">
+		<div class="span1" style="background: #efefef;">
+			<%= image_tag asset_path("a300x500-1.png"), :height => 400 %>
+		</div>
+		<div class="span5">
+			<h2>注册久久珍藏馆会员</h2>
+			<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+			  <%= f.error_notification %>
+			  <%= display_base_errors resource %>
+			  <%= f.input :name, :autofocus => true %>
+			  <%= f.input :email, :required => true %>
+			  <%= f.input :password, :required => true %>
+			  <%= f.input :password_confirmation, :required => true %>
+			  <%= f.button :submit, :class => 'btn-primary' %>
+			<% end %>
+			<%= render "devise/shared/links" %>
+  	</div>
+  	<div class="span6 text-gray bg_user">
+  		<h3>用户注册须知</h3>
+  		欢迎您注册成为本站会员，您不得利用本站制作、复制和传播下列信息：<br><br>
+			1、煽动抗拒、破坏宪法和法律、行政法规实施的；<br>
+			2、煽动颠覆国家政权，推翻社会主义制度的；<br>
+			3、煽动分裂国家、破坏国家统一的；<br>
+			4、煽动民族仇恨、民族歧视，破坏民族团结的；<br>
+			5、捏造或者歪曲事实，散布谣言，扰乱社会秩序的；<br>
+			6、宣扬封建迷信、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的；<br>
+			7、公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的；<br>
+			8、损害国家机关信誉的；<br>
+			9、其他违反宪法和法律行政法规的；<br>
+			10、进行商业广告行为的。
+
+			<br><br><br><br><br><br>
+  	</div>
+
+</div>

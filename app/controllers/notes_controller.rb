@@ -11,6 +11,7 @@ class NotesController < InheritedResources::Base
       format.json 
     end
   end
+  
   def create
     @note = Note.new(params[:note])
     @note.user_id = current_user.id

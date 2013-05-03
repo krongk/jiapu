@@ -1,0 +1,12 @@
+<%= simple_form_for([current_user, @zuopin_cate]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.select  :cate, [['文本形式', 'string'], ['相册形式', 'image']] %>
+    <%= f.input :title %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

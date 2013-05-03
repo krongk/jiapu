@@ -1,0 +1,15 @@
+---
+en:
+  active_record:
+    models:
+      jinian_cate: Jinian cate
+    attributes:
+      jinian_cate:
+        parent_id: Parent
+        title: Title
+        body: Body
+        note_date: Note date
+    errors:
+      jinian_cate: 
+  helpers:
+    jinian_cate: 

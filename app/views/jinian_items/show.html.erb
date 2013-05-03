@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Jinian cate:</b>
+  <%= @jinian_item.jinian_cate %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @jinian_item.user_id %>
+</p>
+
+<p>
+  <b>Upload:</b>
+  <%= @jinian_item.upload_id %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @jinian_item.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%= @jinian_item.body %>
+</p>
+
+<p>
+  <b>Note date:</b>
+  <%= @jinian_item.note_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_jinian_item_path(@jinian_item) %> |
+<%= link_to 'Back', jinian_items_path %>

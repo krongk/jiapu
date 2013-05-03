@@ -1,0 +1,14 @@
+<%= simple_form_for([current_user, @jinian_cate]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%#= f.input :parent_id %>
+    <%= f.input :title %>
+    <%= f.input :body %>
+    <%= f.input :note_date %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

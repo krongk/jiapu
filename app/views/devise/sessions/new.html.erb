@@ -1,8 +1,24 @@
-<h2>用户登录</h2>
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-  <%= f.input :email, :autofocus => true %>
-  <%= f.input :password %>
-  <%= f.input :remember_me, :as => :boolean, input_html: {checked: 'checked'} if devise_mapping.rememberable? %>
-  <%= f.button :submit, :class => 'btn-primary' %>
-<% end %>
-<%= render "devise/shared/links" %>
+<div class="row">
+		<div class="span1" style="background: #efefef;">
+			<%= image_tag asset_path("a300x500-1.png"), :height => 400 %>
+		</div>
+		<div class="span5">
+			<h2>登录久久珍藏馆</h2>
+			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
+			  <%= f.input :email, :autofocus => true %>
+			  <%= f.input :password %>
+			  <%= f.input :remember_me, :as => :boolean, input_html: {checked: 'checked'} if devise_mapping.rememberable? %>
+			  <%= f.button :submit, :class => 'btn-primary' %>
+			<% end %>
+			<%= render "devise/shared/links" %>
+  	</div>
+  	<div class="span6 text-gray bg_user">
+  		<h3>用户登录说明</h3>
+				出现无法登录，大部分情况下是因为：<br><br>
+				1、您输入的邮箱地址或昵称有误；若您曾修改过邮箱地址或是昵称，请用修改后的信息登录；<br><br>
+				2、您输入的密码有误；若您曾修改过注册密码，请用修改后的密码登录；<br>如忘记密码，请点击<a href="/users/password/new">找回密码</a><br><br>
+				3、若您未在久久珍藏馆成功注册，请点击<a href="/users/sign_up">立即注册</a> ，注册成功后，即可正常登录。<br>
+
+				<br><br><br><br><br><br>
+  	</div>
+</div>
