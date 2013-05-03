@@ -1,5 +1,6 @@
 <div class="container">
   <%= form_for Upload.new, :html => { :multipart => true, :id => "fileupload"  } do |f| %>
+    <input name="upload[resource_type]" type="hidden" value="<%= resource_type %>" />
     <input name="upload[resource_id]" type="hidden" value="<%= resource_id %>" />
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="row fileupload-buttonbar">

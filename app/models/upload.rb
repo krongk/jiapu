@@ -1,5 +1,5 @@
 class Upload < ActiveRecord::Base
-  attr_accessible :upload, :resource_id
+  attr_accessible :upload, :user_id, :resource_type, :resource_id
   #has_attached_file :upload
   has_attached_file :upload, :styles => { :medium => "600x600>", :thumb => "100x100>" }, :default_url => "/assets/missing.png"
   
