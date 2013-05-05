@@ -1,16 +1,16 @@
 ---
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      tool_acount: Tool acount
+      tool_acount: 保险箱账户
     attributes:
       tool_acount:
-        user: User
-        name: Name
-        password: Password
-        password_tips: Password tips
-        email: Email
-        note: Note
+        user: 拥有者
+        name: 名称
+        password: 密码
+        password_tips: 密码提示
+        email: 电子邮箱
+        note: 备注
     errors:
       tool_acount: 
   helpers:

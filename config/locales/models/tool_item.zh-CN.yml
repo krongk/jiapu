@@ -1,17 +1,42 @@
 ---
 zh-CN:
-  active_record:
+  activerecord:
     models:
-      tool_item: Tool item
+      tool_item: 保险项
     attributes:
       tool_item:
-        user: User
-        title: Title
-        name: Name
-        password: Password
-        password_tips: Password tips
-        note: Note
+        user: 拥有者
+        title: 保险项目名称
+        name: 用户名
+        password: 密码
+        password_tips: 密码提示
+        note: 备注
     errors:
       tool_item: 
   helpers:
     tool_item: 
+  simple_form:
+    labels:
+      tool_acounts:
+        user: 拥有者
+        title: 保险项目名称
+        name: 用户名
+        password: 密码
+        password_tips: 密码提示
+        note: 备注
+    placeholders:
+      tool_acounts:
+        user: 拥有者
+        title: 保险项目名称
+        name: 用户名
+        password: 密码
+        password_tips: 密码提示
+        note: 备注
+    hint:
+      tool_acounts:
+        user: 拥有者
+        title: 保险项目名称
+        name: 用户名
+        password: 密码
+        password_tips: 密码提示
+        note: 备注

@@ -1,11 +1,5 @@
 RailsComposerApp2::Application.routes.draw do
  
-  resources :tool_items
-
-
-  resources :tool_acounts
-
-
   resources :uploads
 
   devise_for :users
@@ -28,6 +22,8 @@ RailsComposerApp2::Application.routes.draw do
     resources :zuopin_cates
     resources :jinian_items
     resources :jinian_cates
+    resources :tool_items
+    resources :tool_acounts
   end
   
   resources :pages
@@ -40,6 +36,7 @@ RailsComposerApp2::Application.routes.draw do
   get "home/toolbox"
   get "home/index"
   get "notes/events"
-
-  
+  get "tool_acounts/edit_password"
+  get "tool_acounts/login"
+  match "tool_acounts/login" => "tool_acounts#login"
 end

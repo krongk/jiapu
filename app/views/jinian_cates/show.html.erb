@@ -14,6 +14,13 @@
   <b><%= @jinian_cate.title %></b>
 </p>
 
+ <br/>
+<% if @uploads.empty? %>
+  <div class="well text-info">
+    还没有任何内容哟！ 现在就 <b><%= link_to '添加照片', new_user_jinian_item_path(:jinian_cate_id => @jinian_cate.id) %></b>
+  </div>
+<% end %>
+
 <!--Image gallery use gem: Bootstrap-Image-Gallery-->
 <!--https://github.com/blueimp/Bootstrap-Image-Gallery -->
 <!--[if lt IE 7]>

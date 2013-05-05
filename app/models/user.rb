@@ -17,6 +17,8 @@ class User < ActiveRecord::Base
   has_many :huiyi_items
   has_many :jinian_cates
   has_many :jinian_items
+  has_one :tool_acount
+  has_many :tool_items
   has_many :notes
 
   before_create :set_default_roles
@@ -40,6 +42,8 @@ class User < ActiveRecord::Base
   end
 
   def set_default_cates
+    #create tool acount
+    self.tool_acount.create(:name => '', :password => '')
     #create zuopin cate
     self.zuopin_cates.create(:cate => 'string', :title => '小说、散文')
     self.zuopin_cates.create(:cate => 'string', :title => '诗词、韵文')
@@ -49,7 +53,6 @@ class User < ActiveRecord::Base
     #create huiyi cate
     self.huiyi_cates.create(:title => '回忆录')
     #create jinian cate
-    self.jinian_cates.create(:parent_id => 0, :title => '成长纪念册')
     j_cate1 = self.jinian_cates.create!(:parent_id => 0, :title => '毕业纪念册')
     j_cate2 = self.jinian_cates.create!(:parent_id => 0, :title => '结婚纪念册')
     self.jinian_cates.create(:parent_id => 0, :title => '生日纪念册')

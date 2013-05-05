@@ -2,7 +2,7 @@ class UploadsController < ApplicationController
   # GET /uploads
   # GET /uploads.json
   def index
-    @uploads = Upload.order("updated_at DESC").limit(5)
+    #@uploads = Upload.where(:user_id => current_user.id, :resource_id => params[:jinian_cate_id]).order("updated_at DESC").limit(5)
 
     respond_to do |format|
       format.html # index.html.erb

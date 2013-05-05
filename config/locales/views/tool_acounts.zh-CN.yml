@@ -18,3 +18,28 @@ zh-CN:
       destroy:
         notice: ! '%{resource_name} was successfully deleted.'
         alert: ! '%{resource_name} could not be deleted.'
+  simple_form:
+    labels:
+      tool_acounts:
+        user: 拥有者
+        name: 名称
+        password: 密码
+        password_tips: 密码提示
+        email: 电子邮箱
+        note: 备注
+    placeholders:
+      tool_acounts:
+        user: 拥有者
+        name: 名称
+        password: 密码
+        password_tips: 密码提示
+        email: 电子邮箱
+        note: 备注
+    hint:
+      tool_acounts:
+        user: 拥有者
+        name: 名称
+        password: 密码
+        password_tips: 密码提示
+        email: 电子邮箱
+        note: 备注
