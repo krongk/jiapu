@@ -17,7 +17,7 @@ class User < ActiveRecord::Base
   has_many :huiyi_items
   has_many :jinian_cates
   has_many :jinian_items
-  has_one :tool_acount
+  has_one  :tool_acount
   has_many :tool_items
   has_many :notes
 
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
 
   def set_default_cates
     #create tool acount
-    self.tool_acount.create(:name => '', :password => '')
+    ToolAcount.create(:user_id => self.id, :name => '', :password => '')
     #create zuopin cate
     self.zuopin_cates.create(:cate => 'string', :title => '小说、散文')
     self.zuopin_cates.create(:cate => 'string', :title => '诗词、韵文')

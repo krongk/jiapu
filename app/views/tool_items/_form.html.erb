@@ -1,8 +1,8 @@
-<%= simple_form_for(@tool_item) do |f| %>
+<%= simple_form_for([current_user, @tool_item]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
+    <%#= f.association :user %>
     <%= f.input :title %>
     <%= f.input :name %>
     <%= f.input :password %>

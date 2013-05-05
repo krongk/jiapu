@@ -1,6 +1,6 @@
 class ToolAcount < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :email, :name, :note, :password, :password_tips
+  attr_accessible :email, :name, :note, :password, :password_tips, :user_id
 
   before_create :assign_user
 

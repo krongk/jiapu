@@ -1,4 +1,10 @@
-<h1>Listing tool_items</h1>
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">保险箱</li>
+
+    <li class="active pull-right"><%= link_to '添加保险项', new_user_tool_item_path %></li>
+  </ul>
+<% end %>
 
 <table>
   <tr>
@@ -21,13 +27,12 @@
     <td><%= tool_item.password %></td>
     <td><%= tool_item.password_tips %></td>
     <td><%= tool_item.note %></td>
-    <td><%= link_to 'Show', tool_item %></td>
-    <td><%= link_to 'Edit', edit_tool_item_path(tool_item) %></td>
-    <td><%= link_to 'Destroy', tool_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%#= link_to 'Show', tool_item %></td>
+    <td><%#= link_to 'Edit', edit_tool_item_path(tool_item) %></td>
+    <td><%#= link_to 'Destroy', tool_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Tool item', new_tool_item_path %>
