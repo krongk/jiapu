@@ -5,8 +5,8 @@
     <%#= f.association :user %>
     <%= f.input :title %>
     <%= f.input :name %>
-    <%= f.input :password %>
-    <%= f.input :password_tips %>
+    <%= f.input :password, :input_html => {:type => 'input', :value => @tool_item.password} %>
+    <%= f.input :password_tips, :input_html => {:type => 'input', :value => @tool_item.password_tips} %>
     <%= f.input :note %>
   </div>
 

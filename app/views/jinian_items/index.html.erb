@@ -1,33 +1,45 @@
-<h1>Listing jinian_items</h1>
-
-<table>
-  <tr>
-    <th>Jinian cate</th>
-    <th>User</th>
-    <th>Upload</th>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Note date</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @jinian_items.each do |jinian_item| %>
-  <tr>
-    <td><%= jinian_item.jinian_cate %></td>
-    <td><%= jinian_item.user_id %></td>
-    <td><%= jinian_item.upload_id %></td>
-    <td><%= jinian_item.title %></td>
-    <td><%= jinian_item.body %></td>
-    <td><%= jinian_item.note_date %></td>
-    <td><%= link_to 'Show', jinian_item %></td>
-    <td><%= link_to 'Edit', edit_jinian_item_path(jinian_item) %></td>
-    <td><%= link_to 'Destroy', jinian_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">纪念册<span class="divider">/</span></li>
+   
+    <li class="active pull-right"><%= link_to '添加照片', new_user_jinian_item_path(current_user) %><span class="divider">  |  </span></li>
+  </ul>
 <% end %>
-</table>
 
-<br />
+ <br/>
+<% if @uploads.empty? %>
+  <div class="well text-info">
+    还没有任何内容哟！ 现在就 <b><%= link_to '添加照片', new_user_jinian_item_path(current_user) %></b>
+  </div>
+<% end %>
 
-<%= link_to 'New Jinian item', new_jinian_item_path %>
+<!--Image gallery use gem: Bootstrap-Image-Gallery-->
+<!--https://github.com/blueimp/Bootstrap-Image-Gallery -->
+<!--[if lt IE 7]>
+  <link rel="stylesheet" href="/Bootstrap-Image-Gallery/css/bootstrap-ie6.css"><![endif]-->
+<link rel="stylesheet" href="/Bootstrap-Image-Gallery/css/bootstrap-image-gallery.min.css">
+<script src="/Bootstrap-Image-Gallery/js/load-image.min.js"></script>
+<script src="/Bootstrap-Image-Gallery/js/bootstrap-image-gallery.min.js"></script>
+
+<!-- modal-gallery is the modal dialog used for the image gallery -->
+<div id="modal-gallery" class="modal modal-gallery hide fade" tabindex="-1">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">&times;</a>
+        <h3 class="modal-title"></h3>
+    </div>
+    <div class="modal-body"><div class="modal-image"></div></div>
+    <div class="modal-footer">
+        <a class="btn btn-primary modal-next">下一页 <i class="icon-arrow-right icon-white"></i></a>
+        <a class="btn btn-info modal-prev"><i class="icon-arrow-left icon-white"></i> 上一页</a>
+        <a class="btn btn-success modal-play modal-slideshow" data-slideshow="5000"><i class="icon-play icon-white"></i> 幻灯片</a>
+        <a class="btn modal-download" target="_blank"><i class="icon-download"></i> 下载</a>
+    </div>
+</div>
+
+<div id="gallery" data-toggle="modal-gallery" data-target="#modal-gallery">
+    <% @uploads.each do |item| %>
+      <%= link_to image_tag(item.upload.url(:thumb)),  item.upload.url(:medium),  :title => item.upload.name, :"data-gallery" => "gallery" %>
+    <% end %>
+</div>
+<!--Image gallery use gem: Bootstrap-Image-Gallery End-->
+

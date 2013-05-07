@@ -7,9 +7,9 @@ zh-CN:
       tool_item:
         user: 拥有者
         title: 保险项目名称
-        name: 用户名
-        password: 密码
-        password_tips: 密码提示
+        name: 保险项目使用用户名
+        password: 保险项目使用密码
+        password_tips: 保险项目使用密码提示
         note: 备注
     errors:
       tool_item: 
@@ -20,9 +20,9 @@ zh-CN:
       tool_acounts:
         user: 拥有者
         title: 保险项目名称
-        name: 用户名
-        password: 密码
-        password_tips: 密码提示
+        name: 保险项目使用用户名
+        password: 保险项目使用密码
+        password_tips: 保险项目使用密码提示
         note: 备注
     placeholders:
       tool_acounts:

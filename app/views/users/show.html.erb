@@ -1,2 +1,50 @@
+<div class="row-fluid">
+	<div class="span12 well">
+		欢迎光临！<b><%= current_user.name %></b>
+	</div>
+</div>
 
- dashboard
+<div class="block features">
+  <h2 class="title-divider"><span>主要<span class="de-em">功能导航</span></span> <small>久久珍藏馆，相传到永远。</small></h2>
+  <ul class="thumbnails">
+    <li class="span3"> <a href="#"><img src="/assets/icons/zuopin.png" target="_blank" alt="Feature 1"></a>
+      <h3 class="title">
+      	<%=link_to "作品集", user_zuopin_items_path(current_user) %>
+      	<small><%=link_to "添加作品", new_user_zuopin_item_path(current_user) %></small>
+      </h3>
+      <p>作品集用于保存您的相关作品，包括散文、小说、诗歌等.</p>
+    </li>
+    <li class="span3"> <a href="#"><img src="/assets/icons/jinian.png" target="_blank" alt="Feature 2"></a>
+      <h3 class="title">
+      	<%=link_to "纪念册", user_jinian_items_path(current_user) %>
+      	<small><%=link_to "添加照片", new_user_jinian_item_path(current_user) %></small>
+      </h3>
+      <p>纪念册用于保存岁月写真，包括成长记录、毕业纪念、结婚纪念、家庭生活等。</p>
+    </li>
+    <li class="span3"> <a href="#"><img src="/assets/icons/huiyi.png" target="_blank" alt="Feature 3"></a>
+      <h3 class="title">
+      	<%=link_to "回忆录", user_huiyi_items_path(current_user) %>
+      	<small><%=link_to "添加回忆", new_user_huiyi_item_path(current_user) %></small>
+      </h3>
+      <p>回忆录用于文字记录过去的事迹，是留给子孙后代的一封家书、是自我生命的总结、是轻松愉快的倾诉。</p>
+    </li>
+    <li class="span3"> <a href="#"><img src="/assets/icons/note.png" target="_blank" alt="Feature 4"></a>
+      <h3 class="title">
+      	<%=link_to "日志", user_notes_path(current_user) %>
+      	<small><%=link_to "+今日日志", new_user_note_path(current_user) %></small>
+      </h3>
+      <p>日志用于记录日常生活点滴、情感琐碎；发表在网络空间上，能够得到长久有效的保存，便于日后浏览、整理成册。</p>
+    </li>
+    <li class="span3"> <a href="#"><img src="/assets/icons/tool.png" alt="保险箱"></a>
+      <h3 class="title">
+      	<%=link_to "保险箱", user_tool_items_path(current_user) %>
+      	<small><%=link_to "登录保险箱", "/tool_acounts/login" %></small>
+      </h3>
+      <p>保险箱用于保存常用的账户、密码；<BR>手机、卡片、合同、契约等信息；采用二重认证机制保存。</p>
+    </li>
+    <li class="span3"> <a href="/home/jiapu"><img src="/assets/icons/tree.png" target="_blank" alt="家族树" ></a>
+      <h3 class="title"><a href="#">家族<span class="de-em">树</span></a></h3>
+      <p>家族树是一个维系家族成员关系的网上家谱，你可以添加家族成员，并把成员信息有效的组织管理起来。</p>
+    </li>
+  </ul>
+</div>

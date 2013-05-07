@@ -1,22 +1,17 @@
-<div class="row">
-  <div class="span2 text-center" style="background: #eee;">
-    <%= render :partial => "users/user_nav" %>
-  </div>
-  <div class="span10">
-    <div class="content">
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li><%= link_to '日志', user_notes_path %><span class="divider">/</span></li>
+    <li><%= @note.title %></li>
 
-<ul class="breadcrumb">
-  <li><%= link_to '日志', user_notes_path %><span class="divider">/</span></li>
-  <li><%= @note.title %></li>
+    <li class="active pull-right"><%= link_to '编辑日志', edit_user_note_path %></li>
+    <li class="active pull-right"><%= link_to '添加日志', new_user_note_path %><span class="divider">/</span></li>
+  </ul>
+<% end %>
 
-  <li class="active pull-right"><%= link_to '编辑日志', edit_user_note_path %></li>
-  <li class="active pull-right"><%= link_to '添加日志', new_user_note_path %><span class="divider">/</span></li>
-</ul>
 <div class="content">
+  <h2><%= @note.title %></h2>
+  <hr/>
   <%=simple_format @note.body.html_safe %>
 </div>
 
-    </div>
-  </div>
-</div>
 

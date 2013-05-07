@@ -7,14 +7,14 @@
 <% end %>
 
 
-<% if @huiyi_items.empty? %>
+<% if current_user.huiyi_items.empty? %>
     <div class="well">
         还没有任何回忆哟！~ 现在就 <%=link_to  "添加回忆",  new_user_huiyi_item_path(current_user) %>.
     </div>
 <% end %>
 
 <table class="table table-hover">
-<% @huiyi_items.each do |huiyi_item| %>
+<% current_user.huiyi_items.each do |huiyi_item| %>
   <tr>
     <td width="15%"><%= huiyi_item.note_date %></td>
     <td width="70%" align="left"><%= huiyi_item.title %></td>

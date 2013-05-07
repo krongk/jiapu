@@ -2,7 +2,7 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => 'form-vertical' }) do |f| %>
   <%= f.error_notification %>
   <%= display_base_errors resource %>
-  <%= f.input :email, :disabled => true, :required => true %>
+  <%= f.input :email, :disabled => true, :required => true, :hint => "注册用的邮件地址不能修改" %>
   <%= f.input :name, :autofocus => true %>
   <%= f.input :password, :autocomplete => "off", :hint => "如果不想改变当前的密码，则留空", :required => false %>
   <%= f.input :password_confirmation, :required => false %>

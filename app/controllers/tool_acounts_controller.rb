@@ -15,7 +15,17 @@ class ToolAcountsController < InheritedResources::Base
   # end
 
   def login
-    if current_user && current_user.tool_acount && current_user.tool_acount.password == params[:password]
+    if params[:password].blank?
+      return
+    end
+    
+    if session[:tool_acount]
+      flash[:notice] = "已登录保险箱"
+      redirect_to user_tool_items_path(current_user)
+      return
+    end
+    
+    if current_user && current_user.tool_acount && !params[:password].blank? && current_user.tool_acount.password == params[:password]
       session[:tool_acount] = current_user.tool_acount
       flash[:notice] = "密码箱登录成功！"
       redirect_to user_tool_items_path(current_user)

@@ -13,15 +13,38 @@
     
             <li class="">
               <span class="glow"></span>
-              <a href="#">
-                  <i class="icon-sitemap icon-2x"></i>
-                  <span>家族树</span>
+              <a href="/users/edit">
+                  <i class="icon-user icon-2x"></i>
+                  <span>账户管理</span>
               </a>
             </li>
+
+            <li class="">
+              <span class="glow"></span>
+              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#jiazishu">
+                  <i class="icon-sitemap icon-2x"></i>
+                    <span>
+                      家族树
+                      <i class="icon-caret-down"></i>
+                    </span>
+              </a>
+                  <ul id="jiazishu" class="collapse ">
+                    <li class="">
+                      <a href="#">
+                        <i class="icon-plus"></i> 添加家族成员
+                      </a>
+                    </li><li class="">
+                      <a href="#">
+                        <i class="icon-plus"></i> 查看家族树
+                      </a>
+                    </li>
+                  </ul>
+            </li>
+
             <li class="">
               <span class="glow"></span>
               <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZuopin">
-                  <i class="icon-link icon-2x"></i>
+                  <i class="icon-list-alt icon-2x"></i>
                     <span>
                       作品集
                       <i class="icon-caret-down"></i>
@@ -31,7 +54,7 @@
                   <% current_user.zuopin_cates.each do |item| %>
                     <li class="">
                       <%= link_to user_zuopin_cate_path(current_user, item) do %>
-                          <i class="icon-hand-up"></i><%= item.title %>
+                          <i class="icon-plus"></i><%= item.title %>
                       <% end %>
                     </li>
                   <% end %>
@@ -40,7 +63,7 @@
             <li class="">
               <span class="glow"></span>
               <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZd">
-                  <i class="icon-link icon-2x"></i>
+                  <i class="icon-camera icon-2x"></i>
                     <span>
                       纪念册
                       <i class="icon-caret-down"></i>
@@ -55,7 +78,7 @@
                             <% item.sub_cates.each do |sub_item| %>
                               <li class="">
                                 <%= link_to user_jinian_cate_path(current_user, sub_item) do %>
-                                  <i class="icon-hand-up"></i><%= sub_item.title %>
+                                  <i class="icon-plus"></i><%= sub_item.title %>
                                 <% end %>
                               </li>
                             <% end %>
@@ -74,7 +97,7 @@
             <li class="">
               <span class="glow"></span>
               <%= link_to user_huiyi_items_path(current_user) do %>
-                  <i class="icon-leaf icon-2x"></i>
+                  <i class="icon-book icon-2x"></i>
                   <span>回忆录</span>
               <% end %>
             </li>
@@ -89,33 +112,31 @@
             <li class="dark-nav ">
               <span class="glow"></span>
               <a class="accordion-toggle collapsed " data-toggle="collapse" href="#5Q58yRUk6j">
-                  <i class="icon-link icon-2x"></i>
+                  <i class="icon-home icon-2x"></i>
                     <span>
                       保险箱
                       <i class="icon-caret-down"></i>
                     </span>
-
               </a>
 
               <ul id="5Q58yRUk6j" class="collapse ">
-                
-                    <li class="">
-                      <a href="/tool_acounts/login">
-                          <i class="icon-magic"></i> 保险箱登录
-                      </a>
-                    </li>
-                
                     <li class="">
                       <%= link_to "/tool_acounts/edit_password" do %>
                           <i class="icon-user"></i>
                           <span>密码设置</span>
                       <% end %>
                     </li>
-                
+                    
+                    <li class="">
+                      <a href="/tool_acounts/login">
+                          <i class="icon-magic"></i> 保险箱登录
+                      </a>
+                    </li>
+
                     <li class="">
                       <%= link_to user_tool_items_path(current_user) do %>
-                          <i class="icon-leaf"></i>
-                          <span>保险内容</span>
+                          <i class="icon-cogs"></i>
+                          <span>保险(密码箱)</span>
                       <% end %>
                     </li>
                 
