@@ -28,7 +28,7 @@
                       <i class="icon-caret-down"></i>
                     </span>
               </a>
-                  <ul id="jiazishu" class="collapse ">
+                  <ul id="jiazishu" class="collapse">
                     <li class="">
                       <a href="#">
                         <i class="icon-plus"></i> 添加家族成员
@@ -62,14 +62,14 @@
             </li>
             <li class="">
               <span class="glow"></span>
-              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZd">
+              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZdjinian">
                   <i class="icon-camera icon-2x"></i>
                     <span>
                       纪念册
                       <i class="icon-caret-down"></i>
                     </span>
               </a>
-                  <ul id="aDqUL3qcZd" class="collapse ">
+                  <ul id="aDqUL3qcZdjinian" class="collapse ">
                     <% current_user.jinian_cates.select{|s| s.parent_id == 0}.each do |item| %>
                       <% if item.sub_cates.any? %>
                         <li class="">

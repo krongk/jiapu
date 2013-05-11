@@ -20,3 +20,4 @@ $(document).on 'click', '[data-dismiss=modal], .modal-scrollable', ->
 $(document).on 'click', '#ajax-modal', (e) ->
   e.stopPropagation();
 
+
