@@ -41,6 +41,40 @@
                   </ul>
             </li>
 
+            <li class="dark-nav ">
+              <span class="glow"></span>
+              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#5Q58yRUk6j">
+                  <i class="icon-home icon-2x"></i>
+                    <span>
+                      保险箱
+                      <i class="icon-caret-down"></i>
+                    </span>
+              </a>
+
+              <ul id="5Q58yRUk6j" class="collapse ">
+                    <li class="">
+                      <%= link_to "/tool_acounts/edit_password" do %>
+                          <i class="icon-user"></i>
+                          <span>密码设置</span>
+                      <% end %>
+                    </li>
+                    
+                    <li class="">
+                      <a href="/tool_acounts/login">
+                          <i class="icon-magic"></i> 保险箱登录
+                      </a>
+                    </li>
+
+                    <li class="">
+                      <%= link_to user_tool_items_path(current_user) do %>
+                          <i class="icon-cogs"></i>
+                          <span>保险(密码箱)</span>
+                      <% end %>
+                    </li>
+                
+              </ul>
+            </li>
+
             <li class="">
               <span class="glow"></span>
               <a class="accordion-toggle collapsed " data-toggle="collapse" href="#aDqUL3qcZuopin">
@@ -105,44 +139,11 @@
               <span class="glow"></span>
                 <%= link_to user_notes_path(current_user) do %>
                   <i class="icon-leaf icon-2x"></i>
-                  <span>日志</span>
+                  <span>记事本</span>
               <% end %>
             </li>
 
-            <li class="dark-nav ">
-              <span class="glow"></span>
-              <a class="accordion-toggle collapsed " data-toggle="collapse" href="#5Q58yRUk6j">
-                  <i class="icon-home icon-2x"></i>
-                    <span>
-                      保险箱
-                      <i class="icon-caret-down"></i>
-                    </span>
-              </a>
-
-              <ul id="5Q58yRUk6j" class="collapse ">
-                    <li class="">
-                      <%= link_to "/tool_acounts/edit_password" do %>
-                          <i class="icon-user"></i>
-                          <span>密码设置</span>
-                      <% end %>
-                    </li>
-                    
-                    <li class="">
-                      <a href="/tool_acounts/login">
-                          <i class="icon-magic"></i> 保险箱登录
-                      </a>
-                    </li>
-
-                    <li class="">
-                      <%= link_to user_tool_items_path(current_user) do %>
-                          <i class="icon-cogs"></i>
-                          <span>保险(密码箱)</span>
-                      <% end %>
-                    </li>
-                
-              </ul>
-
-            </li>
+           
   </ul>
 
   
