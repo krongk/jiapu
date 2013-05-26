@@ -1,9 +1,13 @@
 class HomeController < ApplicationController
  # caches_page :index
-  #layout => 'home'
+  layout 'home'
   
   def index
     return redirect_to user_path(current_user) if current_user
+  end
+
+  def index_static
+
   end
 
   def jiapu

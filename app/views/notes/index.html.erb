@@ -30,7 +30,7 @@
       <td width="100px"><%= item.created_at.strftime("%Y-%m-%d") %></td>
       <td><%= item.resource_name.blank? ? item.resource_path : item.resource_name %></td>
       
-      <td><%= link_to '下载', user_resource_item_path(current_user, item) %></td>
+      <td><%= link_to '下载', item.resource_path %></td>
       <td><%#= link_to '编辑', edit_user_note_path(current_user, note) %></td>
       <td><%= link_to '删除', user_resource_item_path(current_user, item), method: :delete, data: { confirm: '确定删除?' } %></td>
     </tr>

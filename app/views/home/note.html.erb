@@ -1,33 +1,15 @@
-<div class="well" style="padding: 0px;">
-  <div class="row">
-    <div class="span12">
-    <%=image_tag asset_path("banner6.png"), :width => '938px'%>
-    </div>
-  </div>
+<% content_for :h1 do %>
+记事本，过往岁月的留痕
+<% end %>
+<%#=image_tag "i-b-huiyi.png" %>
+<div class="f" style="width: 430px; line-height: 24px;">
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;久久珍藏馆内的记事本具有模糊搜索及精确搜索功能，平时，把重要的事情记录下来，日后查找极其方便。 </p>
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;必要的时候，您也可以将记事本向族人开放。</P>
+  <br/>
 </div>
-      
 
-<div class="container"> 
-<div class="row">
-  <div class="span2">
-    <ul>
-    <li class="">
-      <a href="/users/1/jinian_cates/11">
-        <i class="icon-plus"></i>恋爱故事
-    </a>                              </li>
-    <li class="">
-      <a href="/users/1/jinian_cates/12">
-        <i class="icon-plus"></i>婚礼纪念
-    </a>                              </li>
-    <li class="">
-      <a href="/users/1/jinian_cates/13">
-        <i class="icon-plus"></i>结婚周年
-    </a>                              </li>
-    </ul>
-
-  </div>
-  <div class="span10">
-      <%= link_to image_tag(asset_path("rizhi-1.png"), :width => '800px'), '/users/sign_up'%>
-  </div>
+<br/>
+<div style="width: 65%;background-color: #e7f0fb; padding: 15px;">
+  <%= image_tag "banner6.png" %>
 </div>
-</div>
+<br/><br/>

@@ -1,6 +1,6 @@
 <div class="masthead">
   <ul class="nav nav-pills pull-right">
-    <li><a href="/">首页</a></li>
+    <li><a href="/home/index_static" target="_blank">网站首页</a></li>
     <% if user_signed_in? %>
       <li><%= link_to '个人中心', user_path(current_user) %></li>
       <li><%= link_to '账户管理', edit_user_registration_path %></li>
@@ -11,7 +11,7 @@
       <%= link_to '注册', new_user_registration_path %>
       </li>
     <% end %>
-    <li class="disabled text-right"><a href="#">客户电话：400-600-888</a></li>
+    <li class="disabled text-right"><a href="#">电话：13813643460</a></li>
   </ul>
   <h3><%=image_tag asset_path("logo.png"), :width => "170px" %></h3>
 </div>

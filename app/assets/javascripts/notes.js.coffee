@@ -9,4 +9,4 @@ jQuery ->
 
   $("#notes_view_toggle_timeline").bind 'click', (event) ->
     $("#notes_view_list").toggle()
-    $("#notes_view_timeline").toggle('slow')
+    $("#notes_view_timeline").toggle()

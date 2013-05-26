@@ -37,6 +37,7 @@ RailsComposerApp2::Application.routes.draw do
   get "home/zuopin"
   get "home/toolbox"
   get "home/index"
+  get "home/index_static"
   get "notes/events"
   get "tool_acounts/edit_password"
   get "tool_acounts/login"

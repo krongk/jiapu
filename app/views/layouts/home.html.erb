@@ -35,13 +35,19 @@
       <%#= render :partial => "layouts/navigation" %>
       <div class="i-header">
         <%=image_tag "logo.png" %>
-        <h1>回忆录，多姿多彩的人生</h1>
+        <h1><%= yield(:h1) %></h1>
         <div class="i-top-nav">
           <table><tr>
             <td><a href="/">首页</a></td>
-            <td>&nbsp;&nbsp;<%= link_to "登录", "/users/sign_in" %></td>
+            <% if user_signed_in? %>
+            <td>&nbsp;&nbsp;<%= link_to '个人中心', user_path(current_user) %></td>
+            <td>&nbsp;&nbsp;<%= link_to '账户管理', edit_user_registration_path %></td>
+            <td>&nbsp;&nbsp;<%= link_to '退出', destroy_user_session_path, :method=>'delete' %></td>
+            <% else %>
+              <td>&nbsp;&nbsp;<%= link_to "登录", "/users/sign_in" %></td>
             <td>&nbsp;&nbsp;<%= link_to '注册', new_user_registration_path %></td>
-            <td>&nbsp;&nbsp;客户电话：400-600-888 &nbsp;&nbsp; QQ: 99499494</td>
+            <% end %>            
+            <td>&nbsp;&nbsp;电话：13813643460 &nbsp;&nbsp; QQ: 2534501027</td>
           </tr></table>
         </div>
       </div>
@@ -50,7 +56,17 @@
       <div class="container"><div class="content">
       <div class="row">
         <div class="span2 text-left">
-          <%=image_tag "i-side-nav.png" %>
+          <%= link_to image_tag("i-btn-1.png"), "/home/jiapu" %><br/>
+          <%= link_to image_tag("i-btn-2.png"), "/home/toolbox" %><br/>
+          <%= link_to image_tag("i-btn-3.png"), "/home/huiyi" %><br/>
+          <%= link_to image_tag("i-btn-4.png"), "/home/zuopin" %><br/>
+          <%= link_to image_tag("i-btn-5.png"), "/home/jinian" %><br/>
+          <%= link_to image_tag("i-btn-6.png"), "/home/note" %><br/>
+       
+          <p>
+            <%= link_to image_tag("i-reg.png"), "/users/sign_up" %><br/>
+          </p>
+          <%#=image_tag "i-side-nav.png" %>
         </div>
         <div class="span10">
           <%= yield %>

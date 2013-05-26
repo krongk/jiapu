@@ -1,14 +1,20 @@
-<div class="well" style="padding: 0px;">
-  <div class="row">
-    <div class="span12">
-    <%=image_tag asset_path("banner7.png"), :width => '938px'%>
-    </div>
-  </div>
+<% content_for :h1 do %>
+保险箱，专属于您的私密空间
+<% end %>
+<%#=image_tag "i-b-huiyi.png" %>
+<div class="f" style="width: 680px; line-height: 24px;">
+     <p> &nbsp;&nbsp;&nbsp;&nbsp;       突然，床动了起来，房子摇了起来，地震了！赶紧穿好衣服，跑进洗手间，晃动越来越大了。哦，原来，我的生命是这样终结的。
+       在这瞬间，面对死亡，听天由命的同时，想着种种遗憾：遗憾我还没来得及跟我的先生告别、没来得及跟我亲爱的爸妈告别、没来得及跟我的朋友告别；遗憾没来得及把银行及理财账户信息留给先生……
+       这是一个朋友的叙述，她希望有这样一个网站可以将至关重要的信息保存起来，如遇不测，这些信息将按照本人意愿转达给相关的亲人。</p>
+       <p> &nbsp;&nbsp;&nbsp;&nbsp;
+       久久珍藏馆为无数个她特设双保险私人保险箱，在这里，她可以保存她的重要信息；在这里，她可以写下她的遗嘱；在这里，她可以写下未完成的愿望……
+       对于每个条款，她可以选定不同的执行人。当不幸万一发生后，网站将凭医院病危通知书或离世证明及其他身份验证信息将相关条款由系统自动开放给相关人员。  </p>
 </div>
-
-      
-<div class="jumbotron">
-  <%= link_to image_tag(asset_path("baoxian-1.png"), :width => '940px'), '/users/sign_up'%>
-  <br/><br/>
+<br/>
+<div style="color: red; font-size: 110%;">
+  提示：保险箱设置二重密码，并且显示上次登录时间；同一天密码5次出错，保险箱将被锁定24小时。
 </div>
-
+<div style="width: 65%;background-color: #e7f0fb; padding: 15px;">
+  <%= image_tag "banner7.png" %>
+</div>
+<br/><br/>
