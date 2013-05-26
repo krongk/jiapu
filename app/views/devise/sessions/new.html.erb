@@ -5,7 +5,7 @@
 		<div class="span5">
 			<h2>登录久久珍藏馆</h2>
 			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
-			  <%= f.input :email, :autofocus => true %>
+			  <%= f.input :login , :autofocus => true, :placeholder=> '用户名或者Email'%>
 			  <%= f.input :password %>
 			  <%= f.input :remember_me, :as => :boolean, input_html: {checked: 'checked'} if devise_mapping.rememberable? %>
 			  <%= f.button :submit, :class => 'btn-primary' %>

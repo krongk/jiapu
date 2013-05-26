@@ -1,8 +1,13 @@
 <% content_for :title_nav do %>
   <ul class="breadcrumb">
-    <li><%= link_to '日志', user_notes_path %><span class="divider">/</span></li>
-    <li class="active">日志列表<span class="divider">/</span></li>
-    <li class="active pull-right"><%= link_to '添加日志', new_user_note_path %></li>
+    <li><%= link_to '记事本', user_notes_path %><span class="divider">/</span></li>
+    <li class="active">记事本列表<span class="divider">/</span></li>
+
+    <li class="active pull-right">
+      <%= link_to '删除所有记事本', "/notes/destroy_all", :delate => true, data: { confirm: '你要删除所有记录吗？ 这是不可逆的，请确认是否要全部删除?' } %>
+    </li>
+    <li class="active pull-right"><%= link_to '上传文件', new_user_resource_item_path(:resource_cate_id => 2) %><span class="divider">  |  </span></li>
+    <li class="active pull-right"><%= link_to '添加记事本', new_user_note_path %><span class="divider">  |  </span></li>
   </ul>
 <% end %>
 
@@ -13,26 +18,40 @@
 
 <% if current_user.notes.empty? %>
     <div class="well">
-        还没有任何内容哟！~ 现在就 <%=link_to  "添加日志",  new_user_note_path(current_user) %>.
+        还没有任何内容哟！~ 现在就 <%=link_to  "添加记事本",  new_user_note_path(current_user) %>.
     </div>
 <% end %>
 
 <div id="notes_view_list">
-    <br/>
-    <table class="table table-striped table-hover">
-    <% @notes.order("created_at DESC").each do |note| %>
-      <tr>
-        <td width="100px"><%= note.note_date %></td>
-        <td><%= note.title %></td>
-        
-        <td><%= link_to '查看', user_note_path(current_user, note) %></td>
-        <td><%= link_to '编辑', edit_user_note_path(current_user, note) %></td>
-        <td><%= link_to '删除', user_note_path(current_user, note), method: :delete, data: { confirm: '确定删除?' } %></td>
-      </tr>
-    <% end %>
-    </table>
-    <%= will_paginate @notes %>
+  <br/>
+  <table class="table table-striped table-hover">
+  <% @resource_items.order("created_at DESC").each do |item| %>
+    <tr>
+      <td width="100px"><%= item.created_at.strftime("%Y-%m-%d") %></td>
+      <td><%= item.resource_name.blank? ? item.resource_path : item.resource_name %></td>
+      
+      <td><%= link_to '下载', user_resource_item_path(current_user, item) %></td>
+      <td><%#= link_to '编辑', edit_user_note_path(current_user, note) %></td>
+      <td><%= link_to '删除', user_resource_item_path(current_user, item), method: :delete, data: { confirm: '确定删除?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+
+  <table class="table table-striped table-hover">
+  <% @notes.order("created_at DESC").each do |note| %>
+    <tr>
+      <td width="100px"><%= note.note_date %></td>
+      <td><%= note.title %></td>
+      
+      <td><%= link_to '查看', user_note_path(current_user, note) %></td>
+      <td><%= link_to '编辑', edit_user_note_path(current_user, note) %></td>
+      <td><%= link_to '删除', user_note_path(current_user, note), method: :delete, data: { confirm: '确定删除?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+  <%= will_paginate @notes %>
 </div>
+
 <div id="notes_view_timeline">
     <%=render :partial => "note_calendar" %>
 </div>

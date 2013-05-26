@@ -2,7 +2,10 @@
   <ul class="breadcrumb">
     <li class="active">回忆录</li>
 
-    <li class="active pull-right"><%= link_to '添加回忆', new_user_huiyi_item_path %></li>
+    <li class="active pull-right">
+      <%= link_to '删除回忆录', user_huiyi_cate_path(current_user,current_user.huiyi_cates.first), method: :delete, data: { confirm: '你要删除所有回忆录吗？ 这是不可逆的，请确认是否要全部删除?' } %>
+    </li>
+    <li class="active pull-right"><%= link_to '添加回忆', new_user_huiyi_item_path %><span class="divider">  |  </span></li>
   </ul>
 <% end %>
 
@@ -14,7 +17,7 @@
 <% end %>
 
 <table class="table table-hover">
-<% current_user.huiyi_items.each do |huiyi_item| %>
+<% current_user.huiyi_items.order("updated_at DESC").each do |huiyi_item| %>
   <tr>
     <td width="15%"><%= huiyi_item.note_date %></td>
     <td width="70%" align="left"><%= huiyi_item.title %></td>

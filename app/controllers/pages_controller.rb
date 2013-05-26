@@ -1,5 +1,5 @@
 class PagesController < InheritedResources::Base
-
+  before_filter :authenticate_user!, :except => [:show]
 	def show
     #params can be id or path_name
     if params[:id] =~ /^\d+$/

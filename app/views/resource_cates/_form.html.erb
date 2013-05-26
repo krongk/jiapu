@@ -1,0 +1,13 @@
+<%= simple_form_for(@resource_cate) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :source_type %>
+    <%= f.input :source_name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

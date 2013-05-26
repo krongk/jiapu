@@ -1,5 +1,6 @@
 #encoding: utf-8
 class ToolItemsController < InheritedResources::Base
+  before_filter :authenticate_user!
   before_filter :tool_acount_login
 
 	def create

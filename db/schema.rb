@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503151041) do
+ActiveRecord::Schema.define(:version => 20130526012652) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -116,6 +116,32 @@ ActiveRecord::Schema.define(:version => 20130503151041) do
 
   add_index "pages", ["path_name"], :name => "index_pages_on_path_name", :unique => true
 
+  create_table "resource_cates", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "source_type"
+    t.string   "source_name"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "resource_cates", ["user_id", "source_type"], :name => "index_resource_cates_on_user_id_and_source_type"
+  add_index "resource_cates", ["user_id"], :name => "index_resource_cates_on_user_id"
+
+  create_table "resource_items", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "resource_cate_id"
+    t.string   "resource_type",    :default => "默认"
+    t.string   "resource_name"
+    t.string   "resource_path"
+    t.text     "resource_note"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "resource_items", ["user_id", "resource_cate_id"], :name => "index_resource_items_on_user_id_and_resource_cate_id"
+  add_index "resource_items", ["user_id", "resource_type"], :name => "index_resource_items_on_user_id_and_resource_type"
+  add_index "resource_items", ["user_id"], :name => "index_resource_items_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -128,9 +154,9 @@ ActiveRecord::Schema.define(:version => 20130503151041) do
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "tool_acounts", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "user_id",       :null => false
     t.string   "name"
-    t.string   "password"
+    t.string   "password",      :null => false
     t.string   "password_tips"
     t.string   "email"
     t.string   "note"
@@ -141,10 +167,10 @@ ActiveRecord::Schema.define(:version => 20130503151041) do
   add_index "tool_acounts", ["user_id"], :name => "index_tool_acounts_on_user_id"
 
   create_table "tool_items", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "title"
-    t.string   "name"
-    t.string   "password"
+    t.integer  "user_id",       :null => false
+    t.string   "title",         :null => false
+    t.string   "name",          :null => false
+    t.string   "password",      :null => false
     t.string   "password_tips"
     t.string   "note"
     t.datetime "created_at",    :null => false

@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   attr_accessible :role_ids, :as => :admin
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
   
+  #Login with name or Email
+  attr_accessor :login
+  attr_accessible :login
+
   has_many :zuopin_cates
   has_many :zuopin_items
   has_many :huiyi_cates
@@ -20,6 +24,9 @@ class User < ActiveRecord::Base
   has_one  :tool_acount
   has_many :tool_items
   has_many :notes
+  has_many :resource_cates
+  has_many :resource_items
+
 
   before_create :set_default_roles
   after_create :set_default_cates
@@ -33,6 +40,17 @@ class User < ActiveRecord::Base
 
     def current_user
       Thread.current[:current_user]
+    end
+  end
+  
+  #Login with name or Email
+  #https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-sign-in-using-their-username-or-email-address
+  def self.find_first_by_auth_conditions(warden_conditions)
+    conditions = warden_conditions.dup
+    if login = conditions.delete(:login)
+      where(conditions).where(["lower(name) = :value OR lower(email) = :value", { :value => login.downcase }]).first
+    else
+      where(conditions).first
     end
   end
 

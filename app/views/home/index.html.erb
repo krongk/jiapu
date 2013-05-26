@@ -34,7 +34,7 @@
 
       <div class="span6">
 
-<%=image_tag asset_path("total.jpg"), :height => "400px", :border=> "0", :usemap=>"#Map", :alt => "久久珍藏馆" %>
+<%#=image_tag asset_path("total.jpg"), :height => "400px", :border=> "0", :usemap=>"#Map", :alt => "久久珍藏馆" %>
 <% if user_signed_in? %>
   <map name="Map">
     <area shape="circle" coords="235,216,65" href="/users/<%= current_user.id %>">

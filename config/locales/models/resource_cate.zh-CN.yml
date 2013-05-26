@@ -1,0 +1,14 @@
+---
+zh-CN:
+  active_record:
+    models:
+      resource_cate: Resource cate
+    attributes:
+      resource_cate:
+        user: User
+        source_type: Source type
+        source_name: Source name
+    errors:
+      resource_cate: 
+  helpers:
+    resource_cate: 

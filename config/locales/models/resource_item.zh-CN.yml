@@ -1,0 +1,17 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      resource_item: 文件名称
+    attributes:
+      resource_item:
+        user: 用户
+        resource_cate: 分类
+        resource_type: 类型
+        resource_name: 名称
+        resource_path: 路径
+        resource_note: 备注
+    errors:
+      resource_item: 
+  helpers:
+    resource_item: 

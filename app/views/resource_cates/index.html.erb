@@ -1,0 +1,27 @@
+<h1>Listing resource_cates</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Source type</th>
+    <th>Source name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @resource_cates.each do |resource_cate| %>
+  <tr>
+    <td><%= resource_cate.user %></td>
+    <td><%= resource_cate.source_type %></td>
+    <td><%= resource_cate.source_name %></td>
+    <td><%= link_to 'Show', resource_cate %></td>
+    <td><%= link_to 'Edit', edit_resource_cate_path(resource_cate) %></td>
+    <td><%= link_to 'Destroy', resource_cate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Resource cate', new_resource_cate_path %>

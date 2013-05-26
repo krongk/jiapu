@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body{
-  padding: 10px;
+  padding: 10px 0;
 	background: url("/assets/black.gif");
 	background-repeat: repeat;
 	background-position: left top;
@@ -15,6 +15,44 @@ body{
   max-width: 940px;
   padding: 0 20px;
   border: 4px solid #eee;
+}
+.container-narrow-bg {
+  background: url("/assets/index-bg.png") no-repeat left top;
+  margin: 0 auto;
+  max-width: 940px;
+
+  padding: 0 20px;
+  margin-top: -10px;
+  padding-top: 40px;
+}
+.container-narrow-foot-bg {
+  background: url("/assets/index-foot-bg.png") no-repeat left bottom;
+  margin: 0 auto;
+  max-width: 940px;
+  height: 65px;
+  padding: 0 20px;
+}
+.i-header{
+ float: left;
+ width: 980px;
+ height: 100px;
+ display: block;
+ clear: both;
+}
+.i-header h1, h2{
+  color: red;
+}
+.i-top-nav{
+  float: right;
+  background-color: #eee;
+  padding: 2px 4px;
+  margin-top: -98px;
+  margin-right: 40px;
+}
+.i-header img{
+  float: left;
+  margin-left: 0px;
+  margin-right: 20px;
 }
 .container-narrow > hr {
   margin: 20px 0;

@@ -31,16 +31,34 @@
     </script>
   </head>
   <body class="<%= controller_name %> <%= action_name %>">
-    <div class="container-narrow">
-    <%= render :partial => "layouts/navigation" %>
-    <hr/>
+    <div class="container-narrow-bg">
+      <%#= render :partial => "layouts/navigation" %>
+      <div class="i-header">
+        <%=image_tag "logo.png" %>
+        <h1>回忆录，多姿多彩的人生</h1>
+        <div class="i-top-nav">
+          <table><tr>
+            <td><a href="/">首页</a></td>
+            <td>&nbsp;&nbsp;<%= link_to "登录", "/users/sign_in" %></td>
+            <td>&nbsp;&nbsp;<%= link_to '注册', new_user_registration_path %></td>
+            <td>&nbsp;&nbsp;客户电话：400-600-888 &nbsp;&nbsp; QQ: 99499494</td>
+          </tr></table>
+        </div>
+      </div>
 
-    <%= render 'layouts/messages' %>
-    <%= yield %>
-    
-    </div> <!-- /container -->
-     <div class="container-narrow">
-     <%= render :partial => "layouts/footer" %>
+      <%= render 'layouts/messages' %>
+      <div class="container"><div class="content">
+      <div class="row">
+        <div class="span2 text-left">
+          <%=image_tag "i-side-nav.png" %>
+        </div>
+        <div class="span10">
+          <%= yield %>
+        </div>
+      </div></div></div>
+    </div>
+    <div class="container-narrow-foot-bg">
+      <%= render :partial => "layouts/footer" %>
    </div>
   </body>
 </html>

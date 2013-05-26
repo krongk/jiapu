@@ -2,6 +2,16 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
 
+  def search_items
+    @search_items = []
+    if params[:cate] == 'note'
+      notes = current_user.notes.where(["title like ? OR body like ?", "%#{params[:q]}%", "%#{params[:q]}%"])
+      notes.each do |note|
+        @search_items << {:created_at => note.created_at, :title => note.title, :url => user_note_path(current_user,note)}
+      end
+    end
+  end
+
   def index
     authorize! :index, @user, :message => '没有管理员权限.'
     @users = User.order("updated_at DESC").paginate(:page => params[:page]|| 1, :per_page => 20)

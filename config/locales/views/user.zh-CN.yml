@@ -3,6 +3,7 @@ zh-CN:
   simple_form:
     labels:
       user:
+        login: '登录名'
         name: '名称'
         email: '电子邮件'
         password: '密码'
@@ -11,6 +12,7 @@ zh-CN:
         remember_me: '记住登录状态'
     placeholders:
       user:
+        login: '输入登录名（用户名或者电子邮箱）'
         name: '输入名称'
         email: '输入电子邮件'
         password: '输入6..12位密码'

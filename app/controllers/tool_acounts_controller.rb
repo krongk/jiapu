@@ -1,5 +1,6 @@
 #encoding: utf-8
 class ToolAcountsController < InheritedResources::Base
+  before_filter :authenticate_user!
   before_filter :tool_login_required, :except => [:login]
   
   def create

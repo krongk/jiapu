@@ -1,5 +1,4 @@
 RailsComposerApp2::Application.routes.draw do
- 
   resources :uploads
 
   devise_for :users
@@ -24,10 +23,13 @@ RailsComposerApp2::Application.routes.draw do
     resources :jinian_cates
     resources :tool_items
     resources :tool_acounts
+    resources :resource_items
+    resources :resource_cates
   end
   
   resources :pages
   
+  get "notes/destroy_all"
   get "home/jiapu"
   get "home/note"
   get "home/jinian"
@@ -38,5 +40,6 @@ RailsComposerApp2::Application.routes.draw do
   get "notes/events"
   get "tool_acounts/edit_password"
   get "tool_acounts/login"
+  match "search_items" => "users#search_items"
   match "tool_acounts/login" => "tool_acounts#login"
 end
