@@ -2,9 +2,9 @@ RailsComposerApp2::Application.routes.draw do
   resources :uploads
 
   devise_for :users
-  root :to => "home#index"
+  root :to => "home#index_static"
   authenticated :user do
-    root :to => 'home#zuopin'
+    root :to => 'users#show'
   end
   #add to user login redirect
   match 'dashboard' => 'users#show', :as => 'user_root'
