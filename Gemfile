@@ -34,8 +34,8 @@ gem 'paperclip'
 #gem 'twitter-bootstrap-rails'
 
 #not for windows but for linux
-# gem "libv8", ">= 3.11.8"
-# gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
+ gem "libv8", ">= 3.11.8"
+ gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
 
 #==I18n
 	# Central point to collect locale data for use in Ruby on Rails.

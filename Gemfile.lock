@@ -44,10 +44,13 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     better_errors (0.8.0)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
+    binding_of_caller (0.7.1)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (2.3.1.0)
       sass (~> 3.2)
     bootstrap-will_paginate (0.0.9)
@@ -87,6 +90,7 @@ GEM
       nokogiri (>= 1.5.0)
       rails (~> 3.0)
     database_cleaner (1.0.0.RC1)
+    debug_inspector (0.0.2)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -100,6 +104,7 @@ GEM
       launchy (~> 2.1)
       mail (~> 2.2)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -118,6 +123,8 @@ GEM
     formatador (0.2.4)
     formtastic (2.2.1)
       actionpack (>= 3.0)
+    gherkin (2.11.8)
+      multi_json (~> 1.3)
     gherkin (2.11.8-x86-mingw32)
       multi_json (~> 1.3)
     guard (1.7.0)
@@ -132,6 +139,7 @@ GEM
       multi_json (~> 1.0)
     has_scope (0.5.1)
     hike (1.2.2)
+    http_parser.rb (0.5.3)
     http_parser.rb (0.5.3-x86-mingw32)
     i18n (0.6.4)
     i18n_yaml_generator (0.0.1)
@@ -151,6 +159,7 @@ GEM
       activesupport (>= 3.0.0)
     launchy (2.3.0)
       addressable (~> 2.3)
+    libv8 (3.11.8.17)
     listen (0.7.3)
     lumberjack (1.0.3)
     mail (2.4.4)
@@ -165,7 +174,9 @@ GEM
     method_source (0.8.1)
     mime-types (1.22)
     multi_json (1.7.2)
+    mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
+    nokogiri (1.5.9)
     nokogiri (1.5.9-x86-mingw32)
     orm_adapter (0.4.0)
     paperclip (3.4.1)
@@ -177,6 +188,10 @@ GEM
     polyamorous (0.5.0)
       activerecord (~> 3.0)
     polyglot (0.3.3)
+    pry (0.9.12)
+      coderay (~> 1.0.5)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.12-x86-mingw32)
       coderay (~> 1.0.5)
       method_source (~> 0.8)
@@ -211,6 +226,7 @@ GEM
     rake (10.0.4)
     rdoc (3.12.2)
       json (~> 1.4)
+    ref (1.0.4)
     responders (0.9.3)
       railties (~> 3.1)
     rolify (3.2.0)
@@ -239,6 +255,9 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    therubyracer (0.11.4)
+      libv8 (~> 3.11.8.12)
+      ref
     thor (0.18.1)
     tilt (1.3.7)
     tinymce-rails (3.4.9)
@@ -258,6 +277,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -282,6 +302,7 @@ DEPENDENCIES
   jquery-fileupload-rails
   jquery-rails
   launchy (>= 2.2.0)
+  libv8 (>= 3.11.8)
   meta_search (>= 1.1.0.pre)
   mysql2
   paperclip
@@ -292,5 +313,6 @@ DEPENDENCIES
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   simple_form (>= 2.1.0)
+  therubyracer (>= 0.11.3)
   tinymce-rails (~> 3.4.7)
   uglifier (>= 1.0.3)
