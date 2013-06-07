@@ -1,0 +1,66 @@
+---
+zh-CN:
+  user_infos:
+    index:
+      title: User infos
+    show:
+      title: User info
+    edit:
+      title: Editing User info
+    new:
+      title: New User info
+  flash:
+    user_infos:
+      create:
+        notice: ! '%{resource_name} 更新成功.'
+      update:
+        notice: ! '%{resource_name} 更新成功.'
+      destroy:
+        notice: ! '%{resource_name} 删除成功.'
+        alert: ! '%{resource_name} 不能被删除.'
+  simple_form:
+    labels:
+      user_infos:
+        user: 所有者
+        xing: 姓
+        ming: 名
+        en_name: 拼音
+        nice_name: 昵称
+        gender: 性别
+        birth: 出生日期
+        birth_place: 出生地
+        living_place: 现居住地
+        picture_url: 照片路径
+        email: Email
+        qq: QQ
+        phone: 电话
+    placeholders:
+      user_infos:
+        user: 所有者
+        xing: 姓
+        ming: 名
+        en_name: 拼音
+        nice_name: 昵称
+        gender: 性别
+        birth: 出生日期
+        birth_place: 出生地
+        living_place: 现居住地
+        picture_url: 照片路径
+        email: Email
+        qq: QQ
+        phone: 电话
+    hint:
+      user_infos:
+        user: 所有者
+        xing: 姓
+        ming: 名
+        en_name: 拼音
+        nice_name: 昵称
+        gender: 性别
+        birth: 出生日期
+        birth_place: 出生地
+        living_place: 现居住地
+        picture_url: 照片路径
+        email: Email
+        qq: QQ
+        phone: 电话

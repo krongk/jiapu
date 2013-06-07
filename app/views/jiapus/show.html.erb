@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Owner:</b>
+  <%= @jiapu.owner_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @jiapu.name %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @jiapu.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_jiapu_path(@jiapu) %> |
+<%= link_to 'Back', jiapus_path %>

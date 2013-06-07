@@ -1,0 +1,20 @@
+---
+en:
+  user_infos:
+    index:
+      title: User infos
+    show:
+      title: User info
+    edit:
+      title: Editing User info
+    new:
+      title: New User info
+  flash:
+    user_infos:
+      create:
+        notice: ! '%{resource_name} was successfully created.'
+      update:
+        notice: ! '%{resource_name} was successfully updated.'
+      destroy:
+        notice: ! '%{resource_name} was successfully deleted.'
+        alert: ! '%{resource_name} could not be deleted.'

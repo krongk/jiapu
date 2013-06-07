@@ -1,0 +1,2 @@
+module JiapusHelper
+end

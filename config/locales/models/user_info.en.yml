@@ -1,0 +1,24 @@
+---
+en:
+  active_record:
+    models:
+      user_info: User info
+    attributes:
+      user_info:
+        user: User
+        xing: Xing
+        ming: Ming
+        en_name: En name
+        nice_name: Nice name
+        gender: Gender
+        birth: Birth
+        birth_place: Birth place
+        living_place: Living place
+        picture_url: Picture url
+        email: Email
+        qq: Qq
+        phone: Phone
+    errors:
+      user_info: 
+  helpers:
+    user_info: 

@@ -1,0 +1,29 @@
+<h1>Listing user_relationships</h1>
+
+<table>
+  <tr>
+    <th>Jiapu</th>
+    <th>User</th>
+    <th>Relation type</th>
+    <th>Related user</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @user_relationships.each do |user_relationship| %>
+  <tr>
+    <td><%= user_relationship.jiapu %></td>
+    <td><%= user_relationship.user %></td>
+    <td><%= user_relationship.relation_type %></td>
+    <td><%= user_relationship.related_user_id %></td>
+    <td><%= link_to 'Show', user_relationship %></td>
+    <td><%= link_to 'Edit', edit_user_relationship_path(user_relationship) %></td>
+    <td><%= link_to 'Destroy', user_relationship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User relationship', new_user_relationship_path %>

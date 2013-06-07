@@ -1,0 +1,27 @@
+<h1>Listing jiapus</h1>
+
+<table>
+  <tr>
+    <th>Owner</th>
+    <th>Name</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @jiapus.each do |jiapu| %>
+  <tr>
+    <td><%= jiapu.owner_id %></td>
+    <td><%= jiapu.name %></td>
+    <td><%= jiapu.note %></td>
+    <td><%= link_to 'Show', jiapu %></td>
+    <td><%= link_to 'Edit', edit_jiapu_path(jiapu) %></td>
+    <td><%= link_to 'Destroy', jiapu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Jiapu', new_jiapu_path %>

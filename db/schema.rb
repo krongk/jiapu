@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130526012652) do
+ActiveRecord::Schema.define(:version => 20130606081534) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -67,6 +67,14 @@ ActiveRecord::Schema.define(:version => 20130526012652) do
 
   add_index "huiyi_items", ["huiyi_cate_id"], :name => "index_huiyi_items_on_huiyi_cate_id"
   add_index "huiyi_items", ["user_id"], :name => "index_huiyi_items_on_user_id"
+
+  create_table "jiapus", :force => true do |t|
+    t.string   "owner_id"
+    t.string   "name"
+    t.text     "note"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "jinian_cates", :force => true do |t|
     t.integer  "user_id",    :null => false
@@ -190,6 +198,38 @@ ActiveRecord::Schema.define(:version => 20130526012652) do
     t.datetime "created_at",                                 :null => false
     t.datetime "updated_at",                                 :null => false
   end
+
+  create_table "user_infos", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "xing"
+    t.string   "ming"
+    t.string   "en_name"
+    t.string   "nice_name"
+    t.integer  "gender"
+    t.date     "birth"
+    t.string   "birth_place"
+    t.string   "living_place"
+    t.string   "picture_url"
+    t.string   "email"
+    t.string   "qq"
+    t.string   "phone"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "user_infos", ["user_id"], :name => "index_user_infos_on_user_id"
+
+  create_table "user_relationships", :force => true do |t|
+    t.integer  "jiapu_id"
+    t.integer  "user_id"
+    t.string   "relation_type"
+    t.integer  "related_user_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "user_relationships", ["jiapu_id"], :name => "index_user_relationships_on_jiapu_id"
+  add_index "user_relationships", ["user_id"], :name => "index_user_relationships_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

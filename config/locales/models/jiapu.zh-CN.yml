@@ -1,0 +1,14 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      jiapu: 家谱
+    attributes:
+      jiapu:
+        owner_id: 拥有者
+        name: 家谱名称
+        note: 家谱说明
+    errors:
+      jiapu: 
+  helpers:
+    jiapu: 

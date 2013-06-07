@@ -1,0 +1,15 @@
+---
+en:
+  active_record:
+    models:
+      user_relationship: User relationship
+    attributes:
+      user_relationship:
+        jiapu: Jiapu
+        user: User
+        relation_type: Relation type
+        related_user_id: Related user
+    errors:
+      user_relationship: 
+  helpers:
+    user_relationship: 

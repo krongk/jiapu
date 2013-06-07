@@ -1,0 +1,20 @@
+---
+zh-CN:
+  user_relationships:
+    index:
+      title: User relationships
+    show:
+      title: User relationship
+    edit:
+      title: Editing User relationship
+    new:
+      title: New User relationship
+  flash:
+    user_relationships:
+      create:
+        notice: ! '%{resource_name} was successfully created.'
+      update:
+        notice: ! '%{resource_name} was successfully updated.'
+      destroy:
+        notice: ! '%{resource_name} was successfully deleted.'
+        alert: ! '%{resource_name} could not be deleted.'

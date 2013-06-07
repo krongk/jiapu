@@ -1,0 +1,24 @@
+---
+zh-CN:
+  activerecord:
+    models:
+      user_info: 个人信息
+    attributes:
+      user_info:
+        user: 所有者
+        xing: 姓
+        ming: 名
+        en_name: 拼音
+        nice_name: 昵称
+        gender: 性别
+        birth: 出生日期
+        birth_place: 出生地
+        living_place: 现居住地
+        picture_url: 照片路径
+        email: Email
+        qq: QQ
+        phone: 电话
+    errors:
+      user_info: 
+  helpers:
+    user_info: 

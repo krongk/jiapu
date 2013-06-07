@@ -1,0 +1,14 @@
+---
+en:
+  active_record:
+    models:
+      jiapu: Jiapu
+    attributes:
+      jiapu:
+        owner_id: Owner
+        name: Name
+        note: Note
+    errors:
+      jiapu: 
+  helpers:
+    jiapu: 

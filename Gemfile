@@ -34,8 +34,8 @@ gem 'paperclip'
 #gem 'twitter-bootstrap-rails'
 
 #not for windows but for linux
- gem "libv8", ">= 3.11.8"
- gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
+# gem "libv8", ">= 3.11.8"
+# gem "therubyracer", ">= 0.11.3", :group => :assets, :platform => :ruby, :require => "v8"
 
 #==I18n
 	# Central point to collect locale data for use in Ruby on Rails.
@@ -43,7 +43,7 @@ gem 'paperclip'
 	# 	config.i18n.available_locales = ['es-CO', :de]
 gem 'rails-i18n', '~> 0.1.8'
 # Creates yaml locale files for models and views when using the model / scaffold_controller generators.
-gem 'i18n_yaml_generator', '~> 0.0.1'
+#gem 'i18n_yaml_generator', '~> 0.0.1'
 
 #===Admin
 gem 'activeadmin', '~> 0.6.0'

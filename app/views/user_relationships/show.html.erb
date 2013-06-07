@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Jiapu:</b>
+  <%= @user_relationship.jiapu %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @user_relationship.user %>
+</p>
+
+<p>
+  <b>Relation type:</b>
+  <%= @user_relationship.relation_type %>
+</p>
+
+<p>
+  <b>Related user:</b>
+  <%= @user_relationship.related_user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_relationship_path(@user_relationship) %> |
+<%= link_to 'Back', user_relationships_path %>

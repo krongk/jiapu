@@ -25,7 +25,12 @@ RailsComposerApp2::Application.routes.draw do
     resources :tool_acounts
     resources :resource_items
     resources :resource_cates
+    resources :user_relationships
+    resources :jiapus
+    resources :user_infos
   end
+  resources :user_relationships
+  resources :jiapus
   
   resources :pages
   

@@ -1,0 +1,36 @@
+---
+zh-CN:
+  jiapus:
+    index:
+      title: 家谱
+    show:
+      title: 家谱 
+    edit:
+      title: 家谱
+    new:
+      title: 家谱
+  flash:
+    jiapus:
+      create:
+        notice: ! '%{resource_name} 更新成功.'
+      update:
+        notice: ! '%{resource_name} 更新成功.'
+      destroy:
+        notice: ! '%{resource_name} 删除成功.'
+        alert: ! '%{resource_name} 不能被删除.'
+  simple_form:
+    labels:
+      jiapus:
+        owner_id: 拥有者
+        name: 家谱名称
+        note: 家谱说明
+    placeholders:
+      jiapus:
+        owner_id: 拥有者
+        name: 家谱名称
+        note: 家谱说明
+    hint:
+      jiapus:
+        owner_id: 拥有者
+        name: 家谱名称
+        note: 家谱说明
