@@ -1,11 +1,11 @@
-<%= simple_form_for(@user_relationship) do |f| %>
+<%= simple_form_for([current_user, @user_relationship]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.association :jiapu %>
-    <%= f.association :user %>
+    <%= f.association :user_info %>
     <%= f.input :relation_type %>
-    <%= f.input :related_user_id %>
+    <%= f.input :related_user_info_id %>
   </div>
 
   <div class="form-actions">

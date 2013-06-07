@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   private
+
   #http://stackoverflow.com/questions/3742785/rails-3-devise-current-user-is-not-accessible-in-a-model#3742981
   def set_current_user
     User.current_user = current_user

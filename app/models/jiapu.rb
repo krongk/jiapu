@@ -1,7 +1,9 @@
 class Jiapu < ActiveRecord::Base
-  attr_accessible :name, :note, :owner_id
+  belongs_to :user
 
-  def self.get_jiapu(user)
-  	self.where(:owner_id => user.id).first
-  end
+  has_many :user_relationships
+  has_many :user_infos, :through => :user_relationships
+
+  attr_accessible :user_id, :name, :note
+
 end

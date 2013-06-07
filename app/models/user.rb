@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   attr_accessible :login
 
   has_one  :user_info
+  has_many :jiapus
   has_many :zuopin_cates
   has_many :zuopin_items
   has_many :huiyi_cates
@@ -88,7 +89,9 @@ class User < ActiveRecord::Base
     self.jinian_cates.create(:parent_id => j_cate2.id, :title => '婚礼纪念')
     self.jinian_cates.create(:parent_id => j_cate2.id, :title => '结婚周年')
   
-    UserInfo.create(:user_id => self.id, :email => self.email)
+    jiapu = self.jiapus.create(:name => '我的家族树')
+    u_info = UserInfo.create(:user_id => self.id, :email => self.email)
+    UserRelationship.create(:jiapu_id => jiapu.id, :user_info_id => u_info.id)
   end
 
 end

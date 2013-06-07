@@ -2,12 +2,12 @@
 zh-CN:
   activerecord:
     models:
-      jiapu: 家谱
+      jiapu: 家族树
     attributes:
       jiapu:
         owner_id: 拥有者
-        name: 家谱名称
-        note: 家谱说明
+        name: 家族树名称
+        note: 家族树说明
     errors:
       jiapu: 
   helpers:

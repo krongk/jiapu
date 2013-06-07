@@ -2,19 +2,38 @@
 zh-CN:
   user_relationships:
     index:
-      title: User relationships
+      title: 家谱关系
     show:
-      title: User relationship
+      title: 家谱关系
     edit:
-      title: Editing User relationship
+      title: 家谱关系
     new:
-      title: New User relationship
+      title: 家谱关系
   flash:
     user_relationships:
       create:
-        notice: ! '%{resource_name} was successfully created.'
+        notice: ! '%{resource_name} 更新成功.'
       update:
-        notice: ! '%{resource_name} was successfully updated.'
+        notice: ! '%{resource_name} 更新成功.'
       destroy:
-        notice: ! '%{resource_name} was successfully deleted.'
-        alert: ! '%{resource_name} could not be deleted.'
+        notice: ! '%{resource_name} 更新成功.'
+        alert: ! '%{resource_name} 不能被删除.'
+simple_form:
+    labels:
+      user_relationships:
+        jiapu: 家谱
+        user: 成员
+        relation_type: 关系
+        related_user_id: 关系者
+    placeholders:
+      user_relationships:
+        jiapu: 家谱
+        user: 成员
+        relation_type: 关系
+        related_user_id: 关系者
+    hint:
+      user_relationships:
+        jiapu: 家谱
+        user: 成员
+        relation_type: 关系
+        related_user_id: 关系者

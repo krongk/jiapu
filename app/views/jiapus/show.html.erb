@@ -1,20 +1,66 @@
-<p id="notice"><%= notice %></p>
+<% content_for :title_nav do %>
+  <ul class="breadcrumb">
+    <li class="active">家族树<span class="divider">/</span></li>
+    <li class="active"><%= @jiapu.name %></li>
+    <li class="active pull-right">
+      
+    </li>
+    <li class="active pull-right"><%= link_to '编辑家族树', edit_user_jiapu_path(current_user, @jiapu) %> <span class="divider">  |  </span></li>
+    <li class="active pull-right"><a href="#myModal" data-toggle="modal">添加家族成员</a><span class="divider">  |  </span></li>
+  </ul>
+<% end %>
 
-<p>
-  <b>Owner:</b>
-  <%= @jiapu.owner_id %>
-</p>
-
-<p>
-  <b>Name:</b>
+<!--jiapu info -->
+<h1>
   <%= @jiapu.name %>
-</p>
+</h1>
 
-<p>
-  <b>Note:</b>
-  <%= @jiapu.note %>
-</p>
+<div class="well">
+  <%=h @jiapu.note %>
+</div>
+ 
+<!--jiapu users info-->
+<table class="table table-stripped">
+<% @jiapu.user_infos.each do |user_info| %>
+  <tr>
+    <td><%= user_info.xing %><%= user_info.ming %></td>
+    <td><%= user_info.email %></td>
+    <td><%= user_info.email %></td>
+    <td><%= user_info.email %></td>
+    <td><a href="#myModal" data-toggle="modal">添加家族成员</a></td>
+    <td><a href="#myModal" data-toggle="modal">修改信息</a></td>
+  </tr>
+<% end %>
+</table>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">添加家族成员</h3>
+  </div>
+  <div class="modal-body">
+    <%= simple_form_for(@user_info) do |f| %>
+      <%= f.error_notification %>
 
+      <div class="fform-inputs">
+        <%#= f.association :user %>
+        <%= f.input :xing, :html_input =>{:size => 20} %>
+        <%= f.input :ming %>
+        <%= f.input :en_name %>
+        <%= f.input :nice_name %>
+        <%= f.input :gender %>
+        <%= f.input :birth %>
+        <%= f.input :birth_place %>
+        <%= f.input :living_place %>
+        <%= f.input :picture_url %>
+        <%= f.input :email %>
+        <%= f.input :qq %>
+        <%= f.input :phone %>
+      </div>
 
-<%= link_to 'Edit', edit_jiapu_path(@jiapu) %> |
-<%= link_to 'Back', jiapus_path %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
+  </div>
+</div>

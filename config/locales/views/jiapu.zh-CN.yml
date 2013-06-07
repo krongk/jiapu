@@ -2,13 +2,13 @@
 zh-CN:
   jiapus:
     index:
-      title: 家谱
+      title: 家族树
     show:
-      title: 家谱 
+      title: 家族树 
     edit:
-      title: 家谱
+      title: 家族树
     new:
-      title: 家谱
+      title: 家族树
   flash:
     jiapus:
       create:
@@ -22,15 +22,15 @@ zh-CN:
     labels:
       jiapus:
         owner_id: 拥有者
-        name: 家谱名称
-        note: 家谱说明
+        name: 家族树名称
+        note: 家族树说明
     placeholders:
       jiapus:
         owner_id: 拥有者
-        name: 家谱名称
-        note: 家谱说明
+        name: 家族树名称
+        note: 家族树说明
     hint:
       jiapus:
         owner_id: 拥有者
-        name: 家谱名称
-        note: 家谱说明
+        name: 家族树名称
+        note: 家族树说明

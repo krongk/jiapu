@@ -21,14 +21,7 @@
     </a>
     <ul class="dropdown-menu">
       <li class="">
-        <%= link_to new_jiapu_path do %>
-            <i class="icon-user"></i>
-            <span>创建家谱</span>
-        <% end %>
-      </li>
-
-      <li class="">
-        <%= link_to "/tool_acounts/edit_password" do %>
+        <%= link_to user_jiapu_path(current_user, current_user.jiapus.first) do %>
             <i class="icon-user"></i>
             <span>浏览家谱</span>
         <% end %>
@@ -38,6 +31,12 @@
         <%= link_to user_tool_items_path(current_user) do %>
             <i class="icon-cogs"></i>
             <span>添加家谱成员</span>
+        <% end %>
+      </li>
+      <li class="">
+        <%= link_to edit_user_jiapu_path(current_user, current_user.jiapus.first) do %>
+            <i class="icon-user"></i>
+            <span>修改家谱</span>
         <% end %>
       </li>
       <li class="">

@@ -1,8 +1,8 @@
-<%= simple_form_for(@jiapu) do |f| %>
+<%= simple_form_for([current_user, @jiapu]) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :owner_id %>
+    <%= f.input :user_id, :as => :hidden, :html_input => {:value => current_user.id} %>
     <%= f.input :name %>
     <%= f.input :note %>
   </div>

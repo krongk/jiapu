@@ -2,13 +2,13 @@
 zh-CN:
   active_record:
     models:
-      user_relationship: User relationship
+      user_relationship: 家族树关系
     attributes:
       user_relationship:
-        jiapu: Jiapu
-        user: User
-        relation_type: Relation type
-        related_user_id: Related user
+        jiapu: 家族树
+        user: 成员
+        relation_type: 关系
+        related_user_id: 关系者
     errors:
       user_relationship: 
   helpers:
