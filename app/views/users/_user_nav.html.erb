@@ -20,28 +20,36 @@
       <span>家族树<i class="icon-caret-down"></i></span>
     </a>
     <ul class="dropdown-menu">
-      <li class="">
-        <%= link_to user_jiapu_path(current_user, current_user.jiapus.first) do %>
-            <i class="icon-user"></i>
-            <span>浏览家谱</span>
+        <% if current_user.jiapus.any? %>
+          <li class="">
+            <%= link_to user_jiapu_path(current_user, current_user.jiapus.first) do %>
+              <i class="icon-magic"></i>
+              <span>我的家族树</span>
+            <% end %>
+          </li>
+          <li class="">
+          <%= link_to user_tool_items_path(current_user) do %>
+              <i class="icon-cogs"></i>
+              <span>添加家族成员</span>
+          <% end %>
+          </li>
+          <li class="">
+            <%= link_to edit_user_jiapu_path(current_user, current_user.jiapus.first) do %>
+                <i class="icon-user"></i>
+                <span>修改家谱信息</span>
+            <% end %>
+          </li>
+        <% else %>
+          <li class="">
+            <%= link_to new_user_jiapu_path(current_user) do %>
+              <i class="icon-user"></i>
+              <span>创建家族树</span>
+            <% end %>
+          <li class="">
         <% end %>
-      </li>
-
-      <li class="">
-        <%= link_to user_tool_items_path(current_user) do %>
-            <i class="icon-cogs"></i>
-            <span>添加家谱成员</span>
-        <% end %>
-      </li>
-      <li class="">
-        <%= link_to edit_user_jiapu_path(current_user, current_user.jiapus.first) do %>
-            <i class="icon-user"></i>
-            <span>修改家谱</span>
-        <% end %>
-      </li>
       <li class="">
         <%=link_to edit_user_user_info_path(current_user, current_user.user_info) do %>
-            <i class="icon-magic"></i> 修改我的信息
+            <i class="icon-magic"></i><span>修改我的信息</span>
         <% end %>
       </li>
     </ul>

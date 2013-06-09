@@ -1,6 +1,5 @@
 <% content_for :title_nav do %>
   <ul class="breadcrumb">
-    <li class="active">家族树<span class="divider">/</span></li>
     <li class="active"><%= @jiapu.name %></li>
     <li class="active pull-right">
       
@@ -11,24 +10,46 @@
 <% end %>
 
 <!--jiapu info -->
-<h1>
-  <%= @jiapu.name %>
-</h1>
-
-<div class="well">
-  <%=h @jiapu.note %>
+<div class="alert alert-success">
+  <%=t @jiapu.note %>
 </div>
- 
 <!--jiapu users info-->
-<table class="table table-stripped">
+
+<% if current_user.user_info.xing.blank? && current_user.user_info.ming.blank? %>
+  <div class="alert">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    你还没有更新你的基本信息呢， 请先去更新自己的个人信息吧。 <%= link_to "点击这里", edit_user_user_info_path(current_user, current_user.user_info) %>
+  </div>
+<% end %>
+
+
+<div class="page-header">
+  <h2>家族成员列表<small>管理家族中的每个成员</small></h2>
+</div>
+<table class="table table-bordered">
 <% @jiapu.user_infos.each do |user_info| %>
   <tr>
-    <td><%= user_info.xing %><%= user_info.ming %></td>
+    <th>姓名</th>
+    <th>性别</th>
+    <th>出生地</th>
+    <th>出生日期</th>
+    <th>Email</th>
+    <th colspan="2">操作</th>
+  </tr>
+  <tr>
+    <td><%= user_info.fullname %></td>
+    <td><%= user_info.gender %></td>
+    <td><%= user_info.birth %></td>
+    <td><%= user_info.birth_place %></td>
     <td><%= user_info.email %></td>
-    <td><%= user_info.email %></td>
-    <td><%= user_info.email %></td>
-    <td><a href="#myModal" data-toggle="modal">添加家族成员</a></td>
-    <td><a href="#myModal" data-toggle="modal">修改信息</a></td>
+    <td>
+      <a href="#" class="" data-toggle="popover" title="" data-content='
+        <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=父亲">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member">添加母亲</a><br>
+        <i class="icon-user"></i><a href="/jiapus/new_member">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member">添加母亲</a><br>
+      ' data-original-title="添加家族成员" data-html="true">添加家族关系成员</a>
+    </td>
+    <td><%=link_to "编辑", edit_user_user_info_path(current_user, current_user.user_info) %></td>
+
   </tr>
 <% end %>
 </table>
@@ -36,31 +57,18 @@
 <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    <h3 id="myModalLabel">添加家族成员</h3>
+    <!-- <h3 id="myModalLabel">添加家族成员</h3> -->
   </div>
   <div class="modal-body">
-    <%= simple_form_for(@user_info) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="fform-inputs">
-        <%#= f.association :user %>
-        <%= f.input :xing, :html_input =>{:size => 20} %>
-        <%= f.input :ming %>
-        <%= f.input :en_name %>
-        <%= f.input :nice_name %>
-        <%= f.input :gender %>
-        <%= f.input :birth %>
-        <%= f.input :birth_place %>
-        <%= f.input :living_place %>
-        <%= f.input :picture_url %>
-        <%= f.input :email %>
-        <%= f.input :qq %>
-        <%= f.input :phone %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
+    <%=render :file => "jiapus/new_member" %>
   </div>
 </div>
+
+<script type="text/javascript">
+   // popover demo
+    $("a[data-toggle=popover]")
+      .popover()
+      .click(function(e) {
+        e.preventDefault()
+      })
+</script>

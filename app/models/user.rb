@@ -88,10 +88,9 @@ class User < ActiveRecord::Base
     self.jinian_cates.create(:parent_id => j_cate2.id, :title => '恋爱故事')
     self.jinian_cates.create(:parent_id => j_cate2.id, :title => '婚礼纪念')
     self.jinian_cates.create(:parent_id => j_cate2.id, :title => '结婚周年')
-  
-    jiapu = self.jiapus.create(:name => '我的家族树')
+
     u_info = UserInfo.create(:user_id => self.id, :email => self.email)
-    UserRelationship.create(:jiapu_id => jiapu.id, :user_info_id => u_info.id)
+    
   end
 
 end
