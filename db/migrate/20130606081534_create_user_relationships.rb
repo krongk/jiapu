@@ -4,7 +4,7 @@ class CreateUserRelationships < ActiveRecord::Migration
       t.references :jiapu
       t.references :user_info
       t.string :relation_type
-      t.integer :related_user_id
+      t.integer :related_user_info_id
 
       t.timestamps
     end

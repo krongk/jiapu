@@ -27,12 +27,7 @@
               <span>我的家族树</span>
             <% end %>
           </li>
-          <li class="">
-          <%= link_to user_tool_items_path(current_user) do %>
-              <i class="icon-cogs"></i>
-              <span>添加家族成员</span>
-          <% end %>
-          </li>
+         
           <li class="">
             <%= link_to edit_user_jiapu_path(current_user, current_user.jiapus.first) do %>
                 <i class="icon-user"></i>
