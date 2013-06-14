@@ -23,11 +23,6 @@
 <% end %>
 
 <!--jiapu users info-->
-<% if current_user.user_info.xing.blank? %>
-  <div class="alert"> 你还没有补充自己的详细信息，<%= link_to "请点击这里添加", edit_user_user_info_path(current_user, current_user.user_info) %>
-  </div>
-<% end %>
-
 <h2>家族成员列表<small>管理家族中的每个成员</small></h2>
 <table class="table table-bordered">
   <tr>

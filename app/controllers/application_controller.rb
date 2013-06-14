@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  http_basic_authenticate_with :name => "99zcg", :password => "111" #, :except => :index
+  #http_basic_authenticate_with :name => "99zcg", :password => "111" #, :except => :index
   #before_filter :authenticate_user!
   before_filter :set_current_user
   protect_from_forgery
