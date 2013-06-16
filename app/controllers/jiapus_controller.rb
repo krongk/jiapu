@@ -14,6 +14,10 @@ class JiapusController < InheritedResources::Base
     @user_info = UserInfo.new
   end
 
+  def show_tree
+    
+  end
+
   def update
     update! { user_jiapu_path(current_user)}
   end

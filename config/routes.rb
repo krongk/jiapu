@@ -34,8 +34,8 @@ RailsComposerApp2::Application.routes.draw do
   resources :pages
   
   get "jiapus/new_member"
+  get "jiapus/show_tree"
   match 'create_member' => 'jiapus#create_member', :via => :post
-  
   get "notes/destroy_all"
   get "home/jiapu"
   get "home/note"

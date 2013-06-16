@@ -2,7 +2,7 @@
 class NotesController < InheritedResources::Base
   before_filter :authenticate_user!
   def index
-    @notes = current_user.notes.order("updated_at DESC").paginate(:page => params[:page]|| 1, :per_page => 20)
+    @notes = current_user.notes.order("note_date DESC").paginate(:page => params[:page]|| 1, :per_page => 20)
     @resource_items = current_user.resource_items.where(:resource_cate_id => 2)
   end
 
