@@ -42,11 +42,11 @@
     <td><%= image_tag(user_info.picture_url, :width => '60px', :height => '60px', :class=> 'thumb_picture')  unless user_info.picture_url.blank?%></td>
     <td>
       <a href="#" class="" data-toggle="popover" title="" data-content='
-        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=f">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=m">添加母亲</a> &nbsp;|&nbsp; <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=b">添加兄弟</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=s">添加姐妹</a> &nbsp;|&nbsp; <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=son">添加儿子</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=d">添加女儿</a> &nbsp;|&nbsp; 
+        <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=f">添加父亲</a> &nbsp;&nbsp; <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=m">添加母亲</a> &nbsp;&nbsp; <br>
+        <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=b">添加兄弟</a> &nbsp;&nbsp; <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=s">添加姐妹</a> &nbsp;&nbsp; <br>
+        <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=son">添加儿子</a> &nbsp;&nbsp; <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=d">添加女儿</a> &nbsp;&nbsp; 
         <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=other">添加另一个合伙人</a>
+        <a class="btn" href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=other">添加另一个合伙人</a>
       ' data-original-title="添加家族成员" data-html="true">添加家族关系成员</a>
     </td>
     <td><%=link_to "编辑", edit_user_user_info_path(current_user, user_info) %></td>
