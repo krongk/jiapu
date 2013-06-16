@@ -7,8 +7,8 @@ zh-CN:
       tool_acount:
         user: 拥有者
         name: 名称
-        password: 密码
-        password_tips: 密码提示
+        password: 保险箱密码
+        password_tips: 保险箱密码提示
         email: 电子邮箱
         note: 备注
     errors:
