@@ -10,12 +10,15 @@
     <%#= f.input :gender, as: :radio_buttons, collection: ['男', '女'] %>
     <%#= f.input :birth %>
 
-    性别：<input style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="男">男 &nbsp;&nbsp;&nbsp;&nbsp;女<input  style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="女">
+    性别：男<input style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="1" <%if @user_info.gender == 1 %>checked ="checked"<% end %>> &nbsp;&nbsp;&nbsp;&nbsp;女<input  style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="0" <%if @user_info.gender == 0 %>checked ="checked"<% end %>>
     <br><br>
 
     <%= f.input :birth, start_year: Date.today.year - 120, end_year: Date.today.year - 1%>
     <%= f.input :birth_place %>
     <%#= f.input :living_place %>
+    <% unless @user_info.picture_url.blank? %>
+      <%= image_tag(@user_info.picture_url, :width => '60px', :height => '60px', :class=> 'thumb_picture')%>
+    <% end %>
     <%= f.input :picture_url, :as => :file %>
     <%#= f.input :email %>
     <%= f.input :qq %>

@@ -49,6 +49,7 @@ class JiapusController < InheritedResources::Base
   end
 
   def upload_file
+    return if params[:user_info][:picture_url].blank?
     tmp = params[:user_info][:picture_url].tempfile
     unless (file_ext = params[:user_info][:picture_url].original_filename.split('.')).size > 1
       render :text => '错误的文件扩展名！<br/><a href="javascript: history.go(-1);">返回</a>'

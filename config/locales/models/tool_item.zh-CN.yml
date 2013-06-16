@@ -6,10 +6,10 @@ zh-CN:
     attributes:
       tool_item:
         user: 拥有者
-        title: 保险项目名称
-        name: 保险项目使用用户名
-        password: 保险项目使用密码
-        password_tips: 保险项目使用密码提示
+        title: 项目名称
+        name: 项目内容
+        password: 使用密码
+        password_tips: 密码提示
         note: 备注
     errors:
       tool_item: 
@@ -19,15 +19,15 @@ zh-CN:
     labels:
       tool_acounts:
         user: 拥有者
-        title: 保险项目名称
-        name: 保险项目使用用户名
-        password: 保险项目使用密码
-        password_tips: 保险项目使用密码提示
+        title: 名称
+        name: 使用用户名
+        password: 使用密码
+        password_tips: 使用密码提示
         note: 备注
     placeholders:
       tool_acounts:
         user: 拥有者
-        title: 保险项目名称
+        title: 名称
         name: 用户名
         password: 密码
         password_tips: 密码提示
@@ -35,7 +35,7 @@ zh-CN:
     hint:
       tool_acounts:
         user: 拥有者
-        title: 保险项目名称
+        title: 名称
         name: 用户名
         password: 密码
         password_tips: 密码提示

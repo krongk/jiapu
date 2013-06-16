@@ -9,8 +9,8 @@
 <table class="table table-striped">
   <tr>
     <th>项目名称</th>
-    <th>用户名</th>
-    <th>密码</th>
+    <th>项目内容</th>
+
     <th>密码提示</th>
     <th>备注</th>
     <th></th>
@@ -22,7 +22,7 @@
   <tr>
     <td><%= tool_item.title %></td>
     <td><%= tool_item.name %></td>
-    <td><%= tool_item.password %></td>
+
     <td><%= tool_item.password_tips %></td>
     <td><%= tool_item.note %></td>
     <td><%= link_to '编辑', edit_user_tool_item_path(current_user, tool_item) %></td>

@@ -5,7 +5,7 @@
       
     </li>
     <li class="active pull-right"><%= link_to '编辑家族树', edit_user_jiapu_path(current_user, @jiapu) %> <span class="divider">  |  </span></li>
-    <li class="active pull-right"><a href="#myModal" data-toggle="modal">添加家族成员</a><span class="divider">  |  </span></li>
+    <!-- <li class="active pull-right"><a href="#myModal" data-toggle="modal">添加家族成员</a><span class="divider">  |  </span></li> -->
   </ul>
 <% end %>
 
@@ -36,10 +36,10 @@
   <% @jiapu_user_infos.each do |user_info| %>
   <tr>
     <td><% if user_info.fullname.blank? %> <%= link_to "点击添加", edit_user_user_info_path(current_user, current_user.user_info) %><% else %> <%= user_info.fullname %> <% end %></td>
-    <td><%= user_info.gender == 0 ? '男' : (user_info.gender == 1 ? '女' : '未知') %></td>
+    <td><%= user_info.gender == 1 ? '男' : (user_info.gender == 0 ? '女' : '未知') %></td>
     <td><%= user_info.birth_place %></td>
     <td><%= user_info.birth %></td>
-    <td><%= image_tag(user_info.picture_url, :width => '60')  unless user_info.picture_url.blank?%></td>
+    <td><%= image_tag(user_info.picture_url, :width => '60px', :height => '60px', :class=> 'thumb_picture')  unless user_info.picture_url.blank?%></td>
     <td>
       <a href="#" class="" data-toggle="popover" title="" data-content='
         <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=f">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=m">添加母亲</a> &nbsp;|&nbsp; <br>
@@ -49,7 +49,7 @@
         <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=other">添加另一个合伙人</a>
       ' data-original-title="添加家族成员" data-html="true">添加家族关系成员</a>
     </td>
-    <td><%=link_to "编辑", edit_user_user_info_path(current_user, current_user.user_info) %></td>
+    <td><%=link_to "编辑", edit_user_user_info_path(current_user, user_info) %></td>
 
   </tr>
 <% end %>

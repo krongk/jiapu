@@ -8,6 +8,11 @@ body{
 	background-repeat: repeat;
 	background-position: left top;
 }
+.thumb_picture{
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+}
 /* Custom container */
 .container-narrow {
   background-color: #fff;

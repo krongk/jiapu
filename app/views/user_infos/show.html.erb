@@ -10,7 +10,7 @@
 
 <p>
   <b>性别:</b>
-  <%= @user_info.gender == 0 ? '男' : '女' %>
+  <%= @user_info.gender == 1 ? '男' : (@user_info.gender == 0 ? '女' : '未知') %>
 </p>
 
 <p>
@@ -39,5 +39,5 @@
 </p>
 
 <% unless @user_info.picture_url.blank? %>
-  <%= image_tag @user_info.picture_url, :width => 200 %>
+  <%= image_tag @user_info.picture_url, :width => "200px", :height => "200px", :class=> 'thumb_picture'%>
 <% end %>

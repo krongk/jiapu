@@ -7,7 +7,7 @@
 			<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
 			  <%= f.input :login , :autofocus => true, :placeholder=> '用户名或者Email'%>
 			  <%= f.input :password %>
-			  <%#= f.input :remember_me, :as => :boolean, input_html: {checked: 'checked'} if devise_mapping.rememberable? %>
+			  <%= f.input :remember_me, :as => :boolean, input_html: {checked: 'un-checked'} if devise_mapping.rememberable? %>
 			  <%= f.button :submit, :class => 'btn-primary' %>
 			<% end %>
 			<%= render "devise/shared/links" %>
