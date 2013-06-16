@@ -30,16 +30,16 @@
     <th>性别</th>
     <th>出生地</th>
     <th>出生日期</th>
-    <th>Email</th>
+    <th>照片</th>
     <th colspan="2">操作</th>
   </tr>
   <% @jiapu_user_infos.each do |user_info| %>
   <tr>
-    <td><%= user_info.fullname %></td>
-    <td><%= user_info.gender == 0 ? '男' : '女' %></td>
+    <td><% if user_info.fullname.blank? %> <%= link_to "点击添加", edit_user_user_info_path(current_user, current_user.user_info) %><% else %> <%= user_info.fullname %> <% end %></td>
+    <td><%= user_info.gender == 0 ? '男' : (user_info.gender == 1 ? '女' : '未知') %></td>
     <td><%= user_info.birth_place %></td>
     <td><%= user_info.birth %></td>
-    <td><%= user_info.email %></td>
+    <td><%= image_tag(user_info.picture_url, :width => '60')  unless user_info.picture_url.blank?%></td>
     <td>
       <a href="#" class="" data-toggle="popover" title="" data-content='
         <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=f">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=m">添加母亲</a> &nbsp;|&nbsp; <br>

@@ -38,3 +38,6 @@
   <%= @user_info.phone %>
 </p>
 
+<% unless @user_info.picture_url.blank? %>
+  <%= image_tag @user_info.picture_url, :width => 200 %>
+<% end %>

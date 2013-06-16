@@ -1,4 +1,4 @@
-<%= simple_form_for([current_user, @user_info]) do |f| %>
+<%= simple_form_for([current_user, @user_info], :html => {:multipart => true}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -16,7 +16,7 @@
     <%= f.input :birth, start_year: Date.today.year - 120, end_year: Date.today.year - 1%>
     <%= f.input :birth_place %>
     <%#= f.input :living_place %>
-    <%#= f.file_input :picture_url %>
+    <%= f.input :picture_url, :as => :file %>
     <%#= f.input :email %>
     <%= f.input :qq %>
     <%= f.input :phone %>

@@ -31,6 +31,7 @@ class JiapusController < InheritedResources::Base
   # "user_info"=>{"xing"=>"姓", "ming"=>"名", "nice_name"=>"昵称", "birth_place"=>"出生", 
   # => "living_place"=>"居住", "gender"=>"男", "email"=>"mfwef", "phone"=>"mef ", "birth(1i)"=>"1906", "birth(2i)"=>"6", "birth(3i)"=>"9"}}
   def create_member
+    upload_file
     ActiveRecord::Base.transaction do
       relation_user_info = UserInfo.create(params[:user_info])
       relation_user_info =relation_user_info.reload
@@ -45,5 +46,25 @@ class JiapusController < InheritedResources::Base
       )
     end
     redirect_to user_jiapu_path(current_user, current_user.jiapus.first), notice: "添加成功!"
+  end
+
+  def upload_file
+    tmp = params[:user_info][:picture_url].tempfile
+    unless (file_ext = params[:user_info][:picture_url].original_filename.split('.')).size > 1
+      render :text => '错误的文件扩展名！<br/><a href="javascript: history.go(-1);">返回</a>'
+      return
+    end
+    file_name = "#{Time.now.to_i}.#{file_ext.last.downcase}"
+    file_path = File.join("public", "user_info", 'picture_url', '0')
+    unless File.exist?(file_path)
+      FileUtils.mkdir_p file_path
+    end
+    #public/user_info/picture_url/2/1304543534.jpg
+    file = File.join(file_path, file_name)
+    FileUtils.cp tmp.path, file
+    #FileUtils.rm tmp.path
+    
+    #/resource/picture/2/1304543534.jpg
+    params[:user_info][:picture_url] = file.sub(/^public/,'')
   end
 end

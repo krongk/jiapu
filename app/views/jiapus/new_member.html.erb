@@ -1,33 +1,40 @@
 <style type="text/css">
 .user_container input, textarea {
-  width: 60px;
+  width: 220px;
+  }
+  label{
+    clear: both;
   }
 </style>
 <div class="page-header">
   <h1>添加<%= @user_info.fullname %>的<%=FAMTYPE[params[:relation_type]]%><small>...</small></h1>
 </div>
-<form accept-charset="UTF-8" action="/create_member" class="simple_form new_user_info" id="new_user_info" method="post" novalidate="novalidate">
-	<input name="utf8" type="hidden" value="✓">
-	<input name="authenticity_token" type="hidden" value="Qb6fzPOZ1rtsIESrwXdD4k8NapbC0J5+PcxYdQ8uhw0=">
-	<input name="jiapu_id" type="hidden" value="<%=params[:jiapu_id]%>">
-	<input name="user_info_id" type="hidden" value="<%=params[:user_info_id]%>">
-	<input name="relation_type" type="hidden" value="<%=params[:relation_type]%>">
-      
-姓：<input  id="user_info_xing" name="user_info[xing]" size="16" type="text" >
-名：<input  id="user_info_ming" name="user_info[ming]" size="16" type="text" >
+
+<form accept-charset="UTF-8" action="/create_member" enctype="multipart/form-data"  class="simple_form new_user_info" id="new_user_info" method="post" novalidate="novalidate">
+  <input name="utf8" type="hidden" value="✓">
+  <input name="authenticity_token" type="hidden" value="0g95ejDwLqRlSeL5AcAOfq1ClZnNMqnal8ZyUHYNim8=">
+  <input name="jiapu_id" type="hidden" value="<%=params[:jiapu_id]%>">
+  <input name="user_info_id" type="hidden" value="<%=params[:user_info_id]%>">
+  <input name="relation_type" type="hidden" value="<%=params[:relation_type]%>">
+
+姓：<input id="user_info_xing" name="user_info[xing]" size="16" type="text">
+名：<input id="user_info_ming" name="user_info[ming]" size="16" type="text">
 <!-- 姓名拼音：<input  id="user_info_en_name" name="user_info[en_name]" size="10" type="text" > -->
 <!-- <br>昵&nbsp;&nbsp;称：<input  id="user_info_nice_name" name="user_info[nice_name]" size="16" type="text" > -->
 <br>
-出生地：<input  id="user_info_birth_place" name="user_info[birth_place]" size="10" type="text" >
+出生地：<input id="user_info_birth_place" name="user_info[birth_place]" size="10" type="text">
 <!-- <br>居住地：<input  id="user_info_living_place" name="user_info[living_place]" size="10" type="text" > -->
 <br>
 性&nbsp;&nbsp;别：
   <input class="radio_buttons " id="user_info_gender_" name="user_info[gender]" type="radio" value="男">男
   <input class="radio_buttons " id="user_info_gender_" name="user_info[gender]" type="radio" value="女">女
 <!--   <input class="radio_buttons " id="user_info_gender_" name="user_info[gender]" type="radio" value="未知">未知 -->
-<hr/>
-电子邮箱：<input  id="user_info_email" name="user_info[email]" size="66" type="text" >
+<hr>
+电子邮箱：<input id="user_info_email" name="user_info[email]" size="66" type="text">
 <br>联系电话：<input class="string tel optional" id="user_info_phone" name="user_info[phone]" size="66" type="tel">
+
+ <div class="control-group file optional user_info_picture_url"><label class="file optional control-label" for="user_info_picture_url">照片路径</label><div class="controls"><input class="file optional" id="user_info_picture_url" name="user_info[picture_url]" type="file"></div></div>
+
 
 <div class="control-group date optional user_info_birth"><label class="date optional control-label" for="user_info_birth_1i">出生日期</label><div class="controls"><select class="date optional" id="user_info_birth_1i" name="user_info[birth(1i)]">
 <option value="1893">1893</option>
