@@ -1,6 +1,8 @@
 #encoding: utf-8
-module ApplicationHelper
 
+FAMTYPE = {'f' => '父亲', 'm' => '母亲', 'b' => '兄弟', 's' => '姐妹', 'son' => '儿子', 'd' => '女儿', 'other' => '其它'}
+
+module ApplicationHelper
   def display_base_errors resource
     return '' if (resource.errors.empty?) or (resource.errors[:base].empty?)
     messages = resource.errors[:base].map { |msg| content_tag(:p, msg) }.join

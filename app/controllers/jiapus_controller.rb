@@ -1,5 +1,6 @@
 #encoding: utf-8
 class JiapusController < InheritedResources::Base
+  include ApplicationHelper
   before_filter :authenticate_user!
   def create
     create! { user_path(current_user)}

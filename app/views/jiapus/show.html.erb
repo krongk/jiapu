@@ -42,11 +42,11 @@
     <td><%= user_info.email %></td>
     <td>
       <a href="#" class="" data-toggle="popover" title="" data-content='
-        <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=父亲">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=母亲">添加母亲</a> &nbsp;|&nbsp; <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=兄弟">添加兄弟</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=姐妹">添加姐妹</a> &nbsp;|&nbsp; <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=儿子">添加儿子</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=女儿">添加女儿</a> &nbsp;|&nbsp; 
+        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=f">添加父亲</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=m">添加母亲</a> &nbsp;|&nbsp; <br>
+        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=b">添加兄弟</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=s">添加姐妹</a> &nbsp;|&nbsp; <br>
+        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=son">添加儿子</a> &nbsp;|&nbsp; <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=d">添加女儿</a> &nbsp;|&nbsp; 
         <br>
-        <i class="icon-user"></i><a href="/jiapus/new_member?user_info_name=<%= user_info.fullname%>&jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=其它">添加另一个合伙人</a>
+        <i class="icon-user"></i><a href="/jiapus/new_member?jiapu_id=<%=@jiapu.id%>&user_info_id=<%=user_info.id%>&relation_type=other">添加另一个合伙人</a>
       ' data-original-title="添加家族成员" data-html="true">添加家族关系成员</a>
     </td>
     <td><%=link_to "编辑", edit_user_user_info_path(current_user, current_user.user_info) %></td>

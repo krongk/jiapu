@@ -4,7 +4,7 @@
   }
 </style>
 <div class="page-header">
-  <h1>添加<%= @user_info.fullname %>的<%=params[:relation_type]%><small>...</small></h1>
+  <h1>添加<%= @user_info.fullname %>的<%=FAMTYPE[params[:relation_type]]%><small>...</small></h1>
 </div>
 <form accept-charset="UTF-8" action="/create_member" class="simple_form new_user_info" id="new_user_info" method="post" novalidate="novalidate">
 	<input name="utf8" type="hidden" value="✓">
