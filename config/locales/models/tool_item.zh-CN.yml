@@ -2,14 +2,14 @@
 zh-CN:
   activerecord:
     models:
-      tool_item: 保险项
+      tool_item: 保险箱
     attributes:
       tool_item:
         user: 拥有者
         title: 项目名称
         name: 项目内容
-        password: 使用密码
-        password_tips: 密码提示
+        password: 保险箱密码
+        password_tips: 保险箱密码提示
         note: 备注
     errors:
       tool_item: 
@@ -19,24 +19,24 @@ zh-CN:
     labels:
       tool_acounts:
         user: 拥有者
-        title: 名称
+        title: 保险箱名称
         name: 使用用户名
-        password: 使用密码
-        password_tips: 使用密码提示
+        password: 保险箱密码
+        password_tips: 保险箱密码提示
         note: 备注
     placeholders:
       tool_acounts:
         user: 拥有者
         title: 名称
         name: 用户名
-        password: 密码
-        password_tips: 密码提示
+        password: 保险箱密码
+        password_tips: 保险箱密码提示
         note: 备注
     hint:
       tool_acounts:
         user: 拥有者
         title: 名称
         name: 用户名
-        password: 密码
-        password_tips: 密码提示
+        password: 保险箱密码
+        password_tips: 保险箱密码提示
         note: 备注

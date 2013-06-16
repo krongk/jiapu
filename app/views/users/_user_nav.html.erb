@@ -57,24 +57,26 @@
     </a>
     <ul class="dropdown-menu">
       <li class="">
+        <%= link_to user_tool_items_path(current_user) do %>
+            <i class="icon-cogs"></i>
+            <span>打开保险箱</span>
+        <% end %>
+      </li>
+
+      <li class="">
         <%= link_to "/tool_acounts/edit_password" do %>
             <i class="icon-user"></i>
-            <span>密码设置</span>
+            <span>保险箱密码设置</span>
         <% end %>
       </li>
       
-      <li class="">
+<!--       <li class="">
         <a href="/tool_acounts/login">
             <i class="icon-magic"></i> 保险箱登录
         </a>
       </li>
-
-      <li class="">
-        <%= link_to user_tool_items_path(current_user) do %>
-            <i class="icon-cogs"></i>
-            <span>保险(密码箱)</span>
-        <% end %>
-      </li>
+ -->
+     
     </ul>
   </li>
 

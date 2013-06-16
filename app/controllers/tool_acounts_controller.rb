@@ -16,6 +16,9 @@ class ToolAcountsController < InheritedResources::Base
   # end
 
   def login
+    #this varable used to show password tips.
+    @tool_acount = current_user.tool_acount || ToolAcount.new
+
     if params[:password].blank?
       return
     end

@@ -8,13 +8,16 @@
         </div>
 
         <div class="control-group password optional password">
-          <label class="password optional control-label" for="password">密码</label>
+          <label class="password optional control-label" for="password">保险箱密码</label>
           <div class="controls">
             <input class="password optional" id="password" name="password" placeholder="输入6..12位密码" size="50" type="password" style="width: 185px;"></div></div>
        
         <input class="btn btn-primary" name="commit" type="submit" value="提交" style="width: 200px;">
-        <br/>
+        <br>
+        保险箱密码提示：<%=@tool_acount.password_tips%>
+        <br/><br/>
         如果没有密码，请在<a href="/tool_acounts/edit_password">保险箱密码设置</a>里设置密码。
+
 </form>     
 
 
