@@ -3,16 +3,20 @@
 
   <div class="form-inputs">
     <%#= f.association :user %>
-    <%= f.input :xing, require: true, label: false %>
-    <%= f.input :ming, require: true, label: false %>
-    <%= f.input :en_name %>
-    <%= f.input :nice_name %>
-    <%= f.input :gender, as: :radio_buttons, collection: ['男', '女'] %>
+    <%= f.input :xing, require: true%>
+    <%= f.input :ming, require: true %>
+    <%#= f.input :en_name %>
+    <%#= f.input :nice_name %>
+    <%#= f.input :gender, as: :radio_buttons, collection: ['男', '女'] %>
     <%#= f.input :birth %>
+    
+    性别：<input style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="男">男 &nbsp;&nbsp;&nbsp;&nbsp;女<input  style="width:40px;" size="8" id="user_info_gender_" name="user_info[gender]" type="radio" value="女">
+    <br><br>
+
     <%= f.input :birth, start_year: Date.today.year - 120, end_year: Date.today.year - 1%>
     <%= f.input :birth_place %>
-    <%= f.input :living_place %>
-    <%= f.input :picture_url %>
+    <%#= f.input :living_place %>
+    <%= f.file_input :picture_url %>
     <%#= f.input :email %>
     <%= f.input :qq %>
     <%= f.input :phone %>

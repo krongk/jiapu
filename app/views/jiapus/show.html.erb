@@ -36,9 +36,9 @@
   <% @jiapu_user_infos.each do |user_info| %>
   <tr>
     <td><%= user_info.fullname %></td>
-    <td><%= user_info.gender %></td>
-    <td><%= user_info.birth %></td>
+    <td><%= user_info.gender == 0 ? '男' : '女' %></td>
     <td><%= user_info.birth_place %></td>
+    <td><%= user_info.birth %></td>
     <td><%= user_info.email %></td>
     <td>
       <a href="#" class="" data-toggle="popover" title="" data-content='

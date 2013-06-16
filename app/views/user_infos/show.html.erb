@@ -9,18 +9,8 @@
 </p>
 
 <p>
-  <b>拼音:</b>
-  <%= @user_info.en_name %>
-</p>
-
-<p>
-  <b>昵称:</b>
-  <%= @user_info.nice_name %>
-</p>
-
-<p>
   <b>性别:</b>
-  <%= @user_info.gender %>
+  <%= @user_info.gender == 0 ? '男' : '女' %>
 </p>
 
 <p>
@@ -31,11 +21,6 @@
 <p>
   <b>出生地:</b>
   <%= @user_info.birth_place %>
-</p>
-
-<p>
-  <b>现住地:</b>
-  <%= @user_info.living_place %>
 </p>
 
 <p>
